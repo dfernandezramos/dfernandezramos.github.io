@@ -1,6 +1,6 @@
 baseURL: http://example.org/
 languageCode: en-us
-title: "Toha"
+title: "The syndrome imposter"
 theme: "toha"
 
 # Allow raw html in markdown file
@@ -22,4 +22,4 @@ enableEmoji: true
 # Custom parameters
 params:
   # Github Repo URL. This is used to add "Improve This Page" button
-  gitRepo: <your site's Github repo URL>
+  gitRepo: https://github.com/dfernandezramos/syndromeimposter

@@ -1,0 +1,51 @@
+# your designation
+designation: Software Engineer
+# your company information
+company:
+  name: Fluendo SA.
+  url: "https://fluendo.com/en/"
+
+# your resume. this file path should be relative to you "static" directory
+resume: "files/resume.pdf"
+
+# a summary about you
+summary: 'I am a .Net software engineer with 5 years of working experience with C#. I have built multiplatform desktop applications using GTK+2 and mobile apps using Xamarin, involving myself in everything related to the project (Infrastructure, CI/CD, Backend, Frontend, etc.). My specialty are video analysis projects.'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "impostersyndrome.blog@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/dfernandezramos"
+
+- name: Stackoverflow
+  icon: "fab fa-stack-overflow"
+  url: "https://stackoverflow.com/users/6049064/d-fernandez"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://es.linkedin.com/in/david-fernández-ramos-436aa89b"
+
+# your soft skills
+# give the percentage between 50 to 100 with 5 intervals.
+# currently supported color: blue, yellow, pink, green
+softSkills:
+- name: Organization
+  percentage: 95
+  color: orange
+- name: Team Work
+  percentage: 85
+  color: yellow
+- name: Communication
+  percentage: 80
+  color: pink
+- name: Hard Working
+  percentage: 95
+  color: green
+- name: Curiosity
+  percentage: 90
+  color: blue
