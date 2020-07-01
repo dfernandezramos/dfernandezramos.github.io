@@ -11,44 +11,82 @@ buttons:
 
 # your projects
 projects:
-  - name: Kubernetes
-    logo: images/projects/kubernetes.png
-    role: Contributor
-    timeline: "March 2018 - Present"
-    repo: https://github.com/kubernetes/kubernetes # if your project is public repo on github, then provide this link. it will show star count.
-    #url: ""  # if your project is not a public repo but it has a website, or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
-    summary: Production-Grade Container Scheduling and Management .
-    tags: ["professional", "kubernetes", "cloud"]
-
-  - name: Tensorflow
-    logo: images/projects/tensorflow.png
+  - name: netcorems
+    logo: images/skills/csharp.png
     role: Developer
-    timeline: "Jun 2018 - Present"
-    repo: https://github.com/tensorflow/tensorflow
-    #url: ""
-    summary: An Open Source Machine Learning Framework for Everyone.
-    tags: ["professional", "machine-learning","academic"]
+    timeline: "Jul 2019"
+    repo: https://github.com/dfernandezramos/netcorems
+    summary: net core microservices architecture proof of concept using RabbitMq as message broker and jwt as authentication.
+    tags: ["hobby", "academic"]
 
-  - name: A sample academic paper
-    role: Team Lead
-    timeline: "Jan 2017 - Nov 2017"
-    url: "https://www.example.com"
-    summary: Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente eius reprehenderit animi suscipit autem eligendi esse amet aliquid error eum. Accusantium distinctio soluta aliquid quas placeat modi suscipit eligendi nisi.
-    tags: ["academic","iot"]
+  - name: Kafka.POC
+    logo: images/skills/kafka.png
+    role: Developer
+    timeline: "Jul 2019"
+    repo: https://github.com/dfernandezramos/Kafka.POC
+    summary: C# proof of concept for microservices architecture and event driven microservices architecture using Kafka.
+    tags: ["hobby","academic"]
 
-  - name: Nocode
-    logo: images/projects/no-code.png
-    role: Nothing
-    timeline: "Oct 2019 - Dec 2019"
-    repo: https://github.com/kelseyhightower/nocode
-    #url: ""
-    summary: The best way to write secure and reliable applications. Write nothing; deploy nowhere.
-    tags: ["hobby", "fun"]
-
-  - name: Toha
-    logo: images/projects/toha.png
+  - name: Slack Bot
+    logo: images/projects/slack.png
     role: Owner
-    timeline: "Jun 2019 - Present"
-    repo: https://github.com/hossainemruz/toha
-    summary: A Hugo theme for personal portfolio.
-    tags: ["hobby","hugo","theme","professional"]
+    timeline: "Dec 2018"
+    repo: https://github.com/dfernandezramos/radb-bot
+    summary: Slack bot developed in python for things as health check of the \"Leage of Legends\" API REST I worked on.
+    tags: ["hobby","professional"]
+
+  - name: KafkaNuget
+    logo: images/skills/kafka.png
+    role: Owner
+    timeline: "Jul 2019 - Present"
+    repo: https://github.com/dfernandezramos/KafkaNuget
+    #url: ""
+    summary: Kafka nuget package for an easy way to implement event driven architecture on a .Net Core application.
+    tags: ["hobby"]
+
+  - name: RiftAnalyst - RiftGG
+    logo: images/projects/rift.svg
+    role: Developer
+    timeline: "Apr 2016 - Mar 2019"
+    url: https://www.youtube.com/results?search_query=riftanalyst+riftgg
+    summary: \"Leage of Legends\" video analysis and data analysis application for Windows and macOS. Discontinued.
+    tags: ["professional"]
+
+  - name: LongoMatch
+    logo: images/projects/longo.svg
+    role: Developer
+    timeline: "Jan 2016 - Present"
+    url: https://longomatch.com/
+    summary: Sports video analysis application for Windows, macOS, Android and iOS. Used by many first-level sport teams in the world.
+    tags: ["professional"]
+
+  - name: iON
+    logo: images/skills/csharp.png
+    role: Developer
+    timeline: "Jun 2015 - Dec 2015"
+    url: https://www.iontechnology.tv/
+    summary: Windows C# Desktop application for automatic production with different ONVIF cameras. The resulting video is streamed to an url.
+    tags: ["professional"]
+
+  - name: Partesor
+    logo: images/projects/basic.png
+    role: Developer
+    timeline: "Jun 2014 - May 2015"
+    summary: Treasury department application which is run each night with all the daily bank transactions.
+    tags: ["professional"]
+
+  - name: RiotNet
+    logo: images/skills/cloud.png
+    role: Contributor
+    timeline: "Jun 2014 - May 2015"
+    repo: https://github.com/aj-r/RiotNet
+    summary: A .NET/C# client for the Riot Games API. We had an own fork but I also have contributed to the original repository.
+    tags: ["professional", "hobby"]
+
+  - name: The syndrome imposter
+    logo: assets/images/logo.svg
+    role: Owner
+    timeline: "Jun 2014 - May 2015"
+    repo: https://github.com/dfernandezramos/syndromeimposter
+    summary: My first webpage where I want to share my professional profile and share that knowledge that reduces my imposter syndrome in a series of blog posts.
+    tags: ["hobby"]

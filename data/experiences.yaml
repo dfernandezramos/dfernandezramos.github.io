@@ -1,43 +1,59 @@
 # Your experiences
 experiences:
-  - designation: Software Engineer
+  - designation: C# Senior Software Engineer
     company:
-      name: Example Co.
-      url: "https://www.example.com"
-      location: Dhaka Branch
-      # company overview
-      overview: Example Co. is a widely recognized company for cloud native development. It build tools for Kubernetes.
-    start: Nov 2017
-    # don't provide end date if you are currently working there. It will be replaced by "Present"
-    # end: Dec 2020
-    # give some points about what was your responsibilities at the company.
+      name: Fluendo S.A.
+      url: "https://fluendo.com/"
+      location: Barcelona
+      overview: Multimedia software developer on C# applications for Windows, macOS, iOS and Android.
+    start: Jan 2016
     responsibilities:
-      - Design, develop and manage disaster recovery tool [Xtool](https://www.example.com) that backup Kubernetes volumes, databases and cluster's resource definition.
-      - My another responsibilities.
-      - My more responsibilities.
+      - Design, develop and manage video analysis apps [LongoMatch](https://longomatch.com/) and [RiftAnalyst/RiftGG](https://www.youtube.com/watch?v=ZGtNlpL6gfc) (discontinued).
+      - C# .Net Framework 4.7.8 on Xamarin Studio, Visual Studio for Mac and Windows
+      - GTK 2.0 and Xamarin Forms
+      - WPF
+      - NoSQL database
+      - Monodevelop
+      - Git
+      - SCRUM, AGILE, SOLID
 
-  - designation: Software Engineer
+  - designation: C# Junior Software Engineer
     company:
-      name: PreExample Co.
-      url: "https://www.preexample.com"
-      location: Nowhere
-      overview: PreExample Co. is gateway company to enter into Example co. So, nothing special here.
-    start: March 2016
-    end: May 2017
-    responsibilities:
-      - Write lots of example codes.
-      - Read lots of examples.
-      - See lots of example videos.
-
-  - designation: Intern
-    company:
-      name: Intern Counting Company (ICC).
-      url: "https://www.intern.com"
-      location: Intern Land
-      overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineer.
+      name: ADTEL
+      url: "https://new.adtel.com/"
+      location: Molins de Rei (Barcelona)
+      overview: Multimedia software developer on a Windows C# application for video streaming.
     start: Jun 2015
-    end: Jan 2016
+    end: Dec 2015
     responsibilities:
-      - Count lost of interns.
-      - Count more interns.
-      - Count myself as intern.
+      - C# on Visual Studio 2013, .Net Framework 4.5
+      - XML
+      - SCRUM, AGILE
+
+  - designation: Visual Basic Junior Software Engineer
+    company:
+      name: Avanade
+      url: "https://www.avanade.com"
+      location: Sant Cugat del Vallès (Barcelona)
+      overview: FrontOffice owner and developer in the treasury department at Banc Sabadell.
+    start: Jun 2014
+    end: May 2015
+    responsibilities:
+      - Visual Basic 6.0 with Visual Studio 2003
+      - XML
+      - Oracle SQL (TOAD)
+      - KANBAN
+      - MUREX
+
+  - designation: Visual Basic Intern
+    company:
+      name: BYG S.A.
+      url: "https://byg.com/"
+      location: Molins de Rei (Barcelona)
+      overview: Developer of a Visual Basic application for the KUKA robotic machines management.
+    start: May 2013
+    end: Sep 2013
+    responsibilities:
+      - Visual Basic with Visual Studio 2013 and 4.5 .Net Framework
+      - Microsoft SQL Server 2008
+      - PLC
