@@ -18,8 +18,3 @@ disqusShortname: <your disqus short code>
 
 # Enable global emoji support
 enableEmoji: true
-
-# Custom parameters
-params:
-  # Github Repo URL. This is used to add "Improve This Page" button
-  gitRepo: https://github.com/dfernandezramos/syndromeimposter
