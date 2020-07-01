@@ -1,34 +1,38 @@
 # Your Skills.
 # Give a summary of you each skill in summary section.
 skills:
-- name: Kubernetes
-  icon: "images/skills/kubernetes.png"
-  summary: "Capable of deploying, managing application on Kubernetes. Experienced in writing Kubernetes controllers for CRDs."
+- name: C#
+  icon: "images/skills/csharp.png"
+  summary: "Experience developing desktop and mobile multiplatform applications. Main backend developing language. Capable of testing and clean coding any program."
 
-- name: Go Development
-  icon: "images/skills/go.png"
-  summary: "Using as main language for professional development. Capable of writing scalable, testable, and maintainable program."
+- name: GTK+
+  icon: "images/skills/gtk.png"
+  summary: "Using as main frontend language for desktop professional development. Capable of designing user friendly good looking views."
 
-- name: Cloud Computing
+- name: Xamarin
+  icon: "images/skills/xamarin.png"
+  summary: "Using as main frontend language for mobile professional and recreative development. Microsoft Xamarin professional developer certified."
+
+- name: API REST
   icon: "images/skills/cloud.png"
-  summary: "Worked with most of the major clouds such as GCP, AWS, Azure etc."
-
-- name: Docker
-  icon: "images/skills/docker.svg"
-  summary: "Write most of the programs as dockerized container. Experienced with multi-stage, multi-arch build process."
-
-- name: Prometheus
-  icon: "images/skills/prometheus.png"
-  summary: "Capable of setup, configure Prometheus metrics. Experienced with PromQL, AlertManager. Also, experienced with writing metric exporters."
-
-- name: Linux
-  icon: "images/skills/linux.png"
-  summary: "Using as main operating system. Capable of writing bash/shell scripts."
+  summary: "Participated in the creation of two API REST for \"League of Legends\" videogame for game analysis data."
 
 - name: Git
   icon: "images/skills/git.png"
-  summary: "Experienced with git based development. Mostly, use Github. Also have experience in working with GitLab."
+  summary: "Experienced with git for code version control. Used Github and Bitbucket."
 
-- name: C++
-  icon: "images/skills/c++.png"
-  summary: "Know basic C/C++ programming. Used for contest programming and problem solving."
+- name: Apache Kafka
+  icon: "images/skills/kafka.png"
+  summary: "Experience using Kafka for implementing Event Driven Programming paradigm on a microservices application related to the \"League of Legends\" REST API."
+
+- name: Python
+  icon: "images/skills/python.png"
+  summary: "Second backend developing language. Experience developing and mantaining Fluendo S.A.'s own dependency management system and own CI/CD system."
+
+- name: macOS
+  icon: "images/skills/apple.png"
+  summary: "Using as main operating system. Capable of writing bash/shell scripts, generate installers from scratch and mantain the project infrastructure."
+
+- name: Windows
+  icon: "images/skills/windows.png"
+  summary: "Using as second main operating system. Also capable of writing scripts, generate installers from scratch and mantain the project infrastructure."
