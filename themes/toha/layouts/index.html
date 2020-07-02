@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>{{- .Site.Title -}}</title>
     <!-- import common headers -->
     {{- partial "header.html" . -}}
@@ -12,13 +13,9 @@
     <link rel="stylesheet" href="/assets/css/experiences.css" />
     <link rel="stylesheet" href="/assets/css/projects.css" />
     <link rel="stylesheet" href="/assets/css/recent-posts.css" />
+</head>
 
-    <!-- Add Google Analytics if enabled in configuration -->
-    {{ if .Site.GoogleAnalytics }}
-        {{ template "_internal/google_analytics_async.html" . }}
-    {{ end }}
-  </head>
-  <body data-spy="scroll" data-target="#top-navbar" data-offset="50">
+<body data-spy="scroll" data-target="#top-navbar" data-offset="50">
     <!--- NAVBAR ------------------------->
     {{- partial "navbar.html" . -}}
 
@@ -50,5 +47,6 @@
     <script src="/assets/js/itype.min.js"></script>
     <script src="/assets/js/github-button.js"></script>
     <script src="/assets/js/home.js"></script>
-  </body>
+</body>
+
 </html>
