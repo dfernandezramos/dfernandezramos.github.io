@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on The imposter syndrome</title>
+    <link>https://dfernandezramos.github.io/posts/</link>
+    <description>Recent content in Posts on The imposter syndrome</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dfernandezramos.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I&#39;m an imposter</title>
+      <link>https://dfernandezramos.github.io/posts/imposter/</link>
+      <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dfernandezramos.github.io/posts/imposter/</guid>
+      <description>I don&amp;rsquo;t know how I got here. I know I did not do the best technical test my company gave to me because I know I left that two or three very important things I considere basic so my test was incomplete. The job interview was not bad at all but I feel that my interviewer has interviewed better developers than I. Maybe they were running out of time and they needed the first mid-decent developer they could find or maybe they had not enough money to hire that better developer that I was talking about.</description>
+    </item>
+    
+  </channel>
+</rss>
