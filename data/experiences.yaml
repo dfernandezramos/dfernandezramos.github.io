@@ -6,7 +6,16 @@ experiences:
       url: "https://fluendo.com/"
       location: Barcelona
       overview: Multimedia software developer on C# applications for Windows, macOS, iOS and Android.
+    start: Jun 2019
+
+  - designation: C# Junior Software Engineer
+    company:
+      name: Fluendo S.A.
+      url: "https://fluendo.com/"
+      location: Barcelona
+      overview: Multimedia software developer on C# applications for Windows, macOS, iOS and Android.
     start: Jan 2016
+    end: May 2019
     responsibilities:
       - Design, develop and manage video analysis apps [LongoMatch](https://longomatch.com/) and [RiftAnalyst/RiftGG](https://www.youtube.com/watch?v=ZGtNlpL6gfc) (discontinued).
       - C# .Net Framework 4.7.8 on Xamarin Studio, Visual Studio for Mac and Windows
