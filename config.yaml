@@ -1,6 +1,6 @@
 baseURL: https://dfernandezramos.github.io/
 languageCode: en-us
-title: "The syndrome imposter"
+title: "The imposter syndrome"
 theme: "toha"
 
 # Allow raw html in markdown file
@@ -11,4 +11,4 @@ markup:
 
 # Enable Disqus forum
 # optional
-disqusShortname: thesyndromeimposter
+disqusShortname: theimpostersyndrome

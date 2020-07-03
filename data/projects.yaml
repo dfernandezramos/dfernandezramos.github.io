@@ -83,10 +83,10 @@ projects:
     summary: A .NET/C# client for the Riot Games API. We had an own fork but I also have contributed to the original repository.
     tags: ["professional", "hobby"]
 
-  - name: The syndrome imposter
+  - name: The imposter syndrome
     logo: assets/images/logo.svg
     role: Owner
     timeline: "Jun 2014 - May 2015"
-    repo: https://github.com/dfernandezramos/syndromeimposter
+    repo: https://github.com/dfernandezramos/dfernandezramos.github.io
     summary: My first webpage where I want to share my professional profile and share that knowledge that reduces my imposter syndrome in a series of blog posts.
     tags: ["hobby"]
