@@ -23,3 +23,15 @@ git commit -m "$msg"
 
 # Push source and build repos.
 git push origin master
+
+# Go back to project root
+cd ..
+
+# Fetch the new pushed changes
+git fetch
+
+# Checkout to master branch
+git checkout master
+
+# Reset master to the upstream level
+git reset --hard origin/master
