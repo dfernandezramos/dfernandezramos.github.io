@@ -171,14 +171,12 @@
 <h4 id="different-situations-and-how-to-face-them">Different situations and how to face them:</h4>
 <p><br /></p>
 <h5 id="i-have-done-a-rebase-against-another-branch-and-now-i-have-conflicts">I have done a rebase against another branch and now I have conflicts:</h5>
-<blockquote>
 <ul>
 <li><code>git status</code> -&raquo; To see the files where I have conflicts.</li>
 <li>Open each file and look for the conflicts in there. Look for something like “&laquo;&laquo;“ where you can see your changes and the changes in the other branch that are causing conflicts.</li>
 <li><code>git add &lt;PATH&gt;</code> -&raquo; Add the files you have just solved the conflicts in.</li>
 <li><code>git rebase --continue</code> -&raquo; To continue the rebase process once all current conflicts are solved.</li>
 </ul>
-</blockquote>
 <p><br /></p>
 <h5 id="i-have-pushed-a-commit-in-a-branch-but-i-want-to-revert-it">I have PUSHED a commit in a branch but I want to revert it:</h5>
 <p>There are two ways for solving this situation:</p>
