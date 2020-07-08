@@ -2,6 +2,9 @@ baseURL: https://dfernandezramos.github.io/
 languageCode: en-us
 title: "The imposter syndrome"
 theme: "toha"
+author: David Fernández
+description: "The imposter syndrome dev blog"
+rssLimit: 15
 
 # Allow raw html in markdown file
 markup:
