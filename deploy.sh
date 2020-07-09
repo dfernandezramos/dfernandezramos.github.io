@@ -11,6 +11,15 @@ hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 # Go To Public folder
 cd public
 
+# Fetch the new pushed changes
+git fetch
+
+# Checkout to master branch
+git checkout master
+
+# Reset master to the upstream level
+git reset --hard origin/master
+
 # Add changes to git.
 git add .
 
