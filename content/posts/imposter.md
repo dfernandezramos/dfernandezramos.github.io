@@ -25,6 +25,6 @@ My answers were the same:
 
 You forgot something, David. You were not wrong but you also were not right.
 
-So that is the reason I am still almost an imposter and I want to fix it by sharing my knowledge with calm and a relaxing cup of "café con leche" in my "habitación" (spanish joke) because I think that will help me retaining that theoretical part I need to improve as a developer. I hope we all enjoy this blog and it would be amazing if I can help anyone with it.
+So that is the reason I am still almost an imposter and I want to fix it by sharing my knowledge with calm and a relaxing cup of "café con leche" in my "habitación" (spanish joke) because I think that will help me retaining that theoretical part I need to improve as a developer. I hope we all enjoy this blog and it would be amazing if I can help anyone with it. Promise I will try to post something monthly!
 
 See you all in the next post!
