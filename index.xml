@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>The imposter syndrome</title>
-    <link>https://dfernandezramos.github.io/</link>
+    <link>https://www.theimpostersyndrome.dev/</link>
     <description>Recent content on The imposter syndrome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://dfernandezramos.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.theimpostersyndrome.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Packaging adventures volume I: macOS</title>
-      <link>https://dfernandezramos.github.io/posts/macospackaging/</link>
+      <link>https://www.theimpostersyndrome.dev/posts/macospackaging/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dfernandezramos.github.io/posts/macospackaging/</guid>
+      <guid>https://www.theimpostersyndrome.dev/posts/macospackaging/</guid>
       <description>If I had to define working (right) as a macOS developer out of the bounds of Xcode IDE with one expression I would do it as: &amp;ldquo;Oh, there is one more easy not easy thing Apple wants us to do to make it work properly&amp;rdquo;. Lately I&amp;rsquo;ve been working and struggling hard with packaging the multiplatform application I work on. When Apple released macOS Catalina they introduced a lot of security changes and a lot of applications suddenly stopped working turning App Store outsider developers lifes in a little nightmare.</description>
     </item>
     
     <item>
       <title>Git survival kit</title>
-      <link>https://dfernandezramos.github.io/posts/git_survival_kit/</link>
+      <link>https://www.theimpostersyndrome.dev/posts/git_survival_kit/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dfernandezramos.github.io/posts/git_survival_kit/</guid>
+      <guid>https://www.theimpostersyndrome.dev/posts/git_survival_kit/</guid>
       <description>When I first started in my current company I hadn&amp;rsquo;t used any version control system so when I started using Git it was a little tricky. Lucky me I had one of the best developers I&amp;rsquo;ve ever worked with, Víctor Guzmán. I remember he said something like: &amp;ldquo;Ok, you can use a GUI for a bad Git usage or you can use the Terminal for learning real Git usage. I use Terminal so I won&amp;rsquo;t help you with if you don&amp;rsquo;t use it&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>I&#39;m an imposter</title>
-      <link>https://dfernandezramos.github.io/posts/imposter/</link>
+      <link>https://www.theimpostersyndrome.dev/posts/imposter/</link>
       <pubDate>Fri, 03 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dfernandezramos.github.io/posts/imposter/</guid>
+      <guid>https://www.theimpostersyndrome.dev/posts/imposter/</guid>
       <description>I don&amp;rsquo;t know how I got here. I know I did not do the best technical test my company gave to me because I know I left that two or three very important things I considere basic so my test was incomplete. The job interview was not bad at all but I feel that my interviewer has interviewed better developers than I. Maybe they were running out of time and they needed the first mid-decent developer they could find or maybe they had not enough money to hire that better developer that I was talking about.</description>
     </item>
     
