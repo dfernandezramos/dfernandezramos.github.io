@@ -14,53 +14,55 @@ I am on an intermediate position between the guy who can tell you what code is b
 ---
 #### Introduction:
 
+A simple explanation would be that each .NET language like Visual Basic .NET or C# is not directly read by the processor but for another element called `JIT` compiler and before that, for a major union between .NET languages, all of them are translated to a common language called Intermediate Language (`IL`). Then the `JIT` compiler translates that language into machine code.
 
+.NET is composed by different elements you might heard before like `JIT`, `CLR`, `CLI`, etc. Let's define them: 
 
 ##### CIL (Common Intermediate Language or Microsoft Intermediate Language or Intermediate Language or Microsoft intermediate language MSIL):
 
-Is a set of binary instructions defined within the Common Language Infrastructure (CLI) specification that are executed by a CLI-Compatible runtime environment (CLR).
+Is a set of binary instructions defined within the Common Language Infrastructure (`CLI`) specification that are executed by a `CLI-Compatible` runtime environment (`CLR`).
 
-A language which targets the CLI compiles to CIL: 
+A language which targets the `CLI` compiles to `CIL`: 
 
-1. The source code (i.e.: C#) is translated to CIL bytecode during compilation generating an assembly (DLL), which is a CPU/Platform independent instruction set that can be executed in any environment supporting the CLI (Mono runtime or .NET runtime on Windows).
-2. While the assembly is being executed, the code is passed through the runtime’s Just-in-time (JIT) compiler that generates native code immediately executable by the CPU.
+1. The source code (i.e.: C#) is translated to `CIL` bytecode during compilation generating an assembly (`DLL`), which is a CPU/Platform independent instruction set that can be executed in any environment supporting the `CLI` (Mono runtime or .NET runtime on Windows).
+2. While the assembly is being executed, the code is passed through the runtime’s Just-in-time (`JIT`) compiler that generates native code immediately executable by the CPU.
 3. The CPU executes the code.
-*There is a way to not use the JIT Compiler by using AOT (Ahead-of-time) compilation that creates a single executable of your program without any dependencies on a runtime, but at the cost of executable-file portability.
+*There is a way to not use the `JIT` Compiler by using AOT (Ahead-of-time) compilation that creates a single executable of your program without any dependencies on a runtime, but at the cost of executable-file portability.
 
 ##### JIT (Just-in-time) compilation:
 
 The name Just-in-time is given because of the code that is about to be executed is being compiled at the moment.
 
-The difference between JIT and Virtual Machines with the traditional interpreted bytecode is that JIT combines the speed of compiled code with the flexibility of interpretation so the program can run faster. While the VM simply interprets the bytecode with worse performance, JIT compiles bytecode (CIL) continuously into machine code catching it minimizing lag on future executions of the same code in the current run and since just part of the program is compiled, there is less lag than if the entire program where compiled prior to execution.
+The difference between `JIT` and Virtual Machines with the traditional interpreted bytecode is that `JIT` combines the speed of compiled code with the flexibility of interpretation so the program can run faster. While the VM simply interprets the bytecode with worse performance, `JIT` compiles bytecode (`CIL`) continuously into machine code catching it minimizing lag on future executions of the same code in the current run and since just part of the program is compiled, there is less lag than if the entire program where compiled prior to execution.
 
-JIT provides environment specific optimization for targeted CPUs and OS models, runtime type safety and assembly verification by examining the assembly metadata. Take in mind that there exists what is called “Startup or Warmup delay” that the more optimization JIT performs, the better code will be generated at the cost of an initial execution delay increment.
+`JIT` provides environment specific optimization for targeted CPUs and OS models, runtime type safety and assembly verification by examining the assembly metadata. Take in mind that there exists what is called “Startup or Warmup delay” that the more optimization `JIT` performs, the better code will be generated at the cost of an initial execution delay increment.
 
-JIT outputs the machine code directly into memory and immediately executes it. That memory must be marked as read-only/executable after the code has been written there as writable/executable memory would be a security problem.
+`JIT` outputs the machine code directly into memory and immediately executes it. That memory must be marked as read-only/executable after the code has been written there as writable/executable memory would be a security problem.
 
 ##### CLR (Common Language Runtime):
 
-CLR (known as CoreCLR in .NET Core) Is a virtual machine component of the .NET framework that manages the execution of .NET programs providing type safety, memory management, exception handling, garbage collection, thread management and security.
+`CLR` (known as `CoreCLR` in .NET Core) Is a virtual machine component of the .NET framework that manages the execution of .NET programs providing type safety, memory management, exception handling, garbage collection, thread management and security.
 
-It implements a VES (Virtual Execution System) which provides required support to execute the CIL.
+It implements a `VES` (Virtual Execution System) which provides required support to execute the `CIL`.
 
 ##### CLI (Common Language Infrastructure):
 
-Basically the CLI is an standardized open specification that describes executable code and a runtime environment that allows different languages (C#, Visual Basic .NET, F#, etc.) to be used on different computer platforms without being rewritten for each architecture. Examples of a CLI are .NET Framework, .NET Core and Mono.
+Basically the `CLI` is an standardized open specification that describes executable code and a runtime environment that allows different languages (C#, Visual Basic .NET, F#, etc.) to be used on different computer platforms without being rewritten for each architecture. Examples of a `CLI` are .NET Framework, .NET Core and Mono.
 
 It describes the next aspects:
 * Metadata: information about the program structure.
-*  CTS (Common Type System): a set of data types and operations.
-* CLS (Common Language Specification): subset of CTS containing rules that any language targeting the CLI should conform.
-* VES (Virtual Execution System): loads and executes the CIL.
+* `CTS` (Common Type System): a set of data types and operations.
+* `CLS` (Common Language Specification): subset of `CTS` containing rules that any language targeting the `CLI` should conform.
+* `VES` (Virtual Execution System): loads and executes the `CIL`.
 
-Regarding the CLS, when we talk about CLS-Compliant code we refer to code that can be used by any .NET language. Imagine the next situation with a class written in C# (case sensitive) that we want to use in Visual Basic (case insensitive):
+Regarding the `CLS`, when we talk about `CLS-Compliant` code we refer to code that can be used by any .NET language. Imagine the next situation with a class written in C# (case sensitive) that we want to use in Visual Basic (case insensitive):
 
 * The C# class has defined two public fields “dog” and “Dog”. It works in C# because it is a case sensitive language.
 * The Visual Basic creates an instance of the C# class and tries to use the Dog field. It appears that the instance cannot use the “dog” or “Dog” fields.
 
-In this case we would say that the C# code is not CLS-Compliant and in order to fix that we should use different names for those fields.
+In this case we would say that the C# code is not `CLS-Compliant` and in order to fix that we should use different names for those fields.
 
-By default, the assemblies are not marked as CLS-Compliant so in order to enable this attribute [please follow this page](https://docs.microsoft.com/en-us/dotnet/api/system.clscompliantattribute).
+By default, the assemblies are not marked as `CLS-Compliant` so in order to enable this attribute [please follow this page](https://docs.microsoft.com/en-us/dotnet/api/system.clscompliantattribute).
 
 ##### Big picture:
 
