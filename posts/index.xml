@@ -6,10 +6,19 @@
     <description>Recent content in Posts on The imposter syndrome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.theimpostersyndrome.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.NET in a box</title>
+      <link>https://www.theimpostersyndrome.dev/posts/dotnetinabox/</link>
+      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.theimpostersyndrome.dev/posts/dotnetinabox/</guid>
+      <description>One of the most important things a .NET developer should know is what .NET is. It seems stupid but I know a lot of people that just starts coding and focusing in learning the .NET code they use. They can tell you why that .Count field is better than using the .Any () LINQ method to check for available values in your enumerator but they really don&amp;rsquo;t know (and some of them sadly don&amp;rsquo;t care) how their code is translated and optimized for a concrete processor in a concrete operative system.</description>
+    </item>
     
     <item>
       <title>Packaging adventures volume I: macOS</title>
