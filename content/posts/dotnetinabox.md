@@ -1,6 +1,6 @@
 ---
 title: ".NET in a box"
-date: 2020-08-31
+date: 2020-09-03
 hero: /images/posts/dotnet.png
 # categories:
 # - writing-posts
