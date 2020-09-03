@@ -81,7 +81,7 @@ Following the notes I’ve been taking from this post I’ve created a diagram o
 ---
 <br />
 
-So this is one of the hundred important things in my to-dig list. Just investigating the surface of this topic now I know how .NET works and I can have a conversation about this. Exaggerating things, before clarifying things on this topic for the post a conversation with me would be something like: "I use Mono because is the same thing as .NET but on macOS... but what is .NET? Well... the thing that makes my C# stuf work on a computer".
+So this is one of the hundred important things in my to-dig list. Just investigating the surface of this topic now I know how .NET works and I can have a conversation about this. Exaggerating things, before clarifying things on this topic for the post a conversation with me would be something like: "I use Mono because is the same thing as .NET but on macOS... but what is .NET? Well... the thing that makes my C# stuff work on a computer".
 
 As always, if you find something wrong or you miss something in this post feel free to comment down below and I will make the proper corrections.
 
