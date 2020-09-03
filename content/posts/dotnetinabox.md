@@ -18,7 +18,7 @@ A simple explanation would be that each .NET language like Visual Basic .NET or 
 
 .NET is composed by different elements you might heard before like `JIT`, `CLR`, `CLI`, etc. Let's define them: 
 
-##### CIL (Common Intermediate Language or Microsoft Intermediate Language or Intermediate Language or Microsoft intermediate language MSIL):
+##### CIL (Common Intermediate Language or Intermediate Language or Microsoft intermediate language MSIL):
 
 Is a set of binary instructions defined within the Common Language Infrastructure (`CLI`) specification that are executed by a `CLI-Compatible` runtime environment (`CLR`).
 
