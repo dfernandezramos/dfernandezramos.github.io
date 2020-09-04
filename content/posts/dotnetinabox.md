@@ -7,7 +7,7 @@ hero: /images/posts/dotnet.png
 # - writing-posts-category
 ---
 
-One of the most important things a .NET developer should know is what .NET is. It seems stupid but I know a lot of people that just starts coding and focusing in learning the .NET code they use. They can tell you why that `.Count` field is better than using the `.Any ()` LINQ method to check for available values in your enumerator but they really don't know (and some of them sadly don't care) how their code is translated and optimized for a concrete processor in a concrete operative system.
+One of the most important things a .NET developer should know is what .NET is. It seems stupid but I know a lot of people that just starts coding and focusing in learning the .NET code they use. They can tell you why that `.Count` field is better than using the `.Any ()` LINQ method to check for available values in your enumerator but they really don't know (and some of them sadly don't care) how their code is translated and optimized for a concrete processor in a concrete operating system.
 
 I am on an intermediate position between the guy who can tell you what code is better and how .NET works (more or less). This blog is intended for finishing up with that kind of situations and investigate on that holes to properly talk about the things.
 
