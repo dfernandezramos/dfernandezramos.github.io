@@ -6,10 +6,19 @@
     <description>Recent content in Posts on The imposter syndrome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.theimpostersyndrome.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>.NET Framework vs .NET Core</title>
+      <link>https://www.theimpostersyndrome.dev/posts/core_vs_framework/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.theimpostersyndrome.dev/posts/core_vs_framework/</guid>
+      <description>First things first, I know I’ve been out for a couple of months without posting any article on my site. Sorry for that! I’ve been busy finishing up my computer science degree and I wanted to boost my final project by giving it my free time as much as possible. Thanks to that I have written down some Xamarin things to investigate and share them here, also. Now let’s get back to work!</description>
+    </item>
     
     <item>
       <title>.NET in a box</title>

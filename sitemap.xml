@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.theimpostersyndrome.dev/posts/dotnetinabox/</loc>
-    <lastmod>2020-09-03T00:00:00+00:00</lastmod>
+    <loc>https://www.theimpostersyndrome.dev/posts/core_vs_framework/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.theimpostersyndrome.dev/posts/</loc>
-    <lastmod>2020-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.theimpostersyndrome.dev/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.theimpostersyndrome.dev/posts/dotnetinabox/</loc>
     <lastmod>2020-09-03T00:00:00+00:00</lastmod>
   </url>
   
