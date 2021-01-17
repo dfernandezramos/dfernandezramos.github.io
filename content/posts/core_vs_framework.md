@@ -57,7 +57,7 @@ Microsoft has been working on all these differences within their frameworks ecos
 
 ###### C# 9
 
-* Top-level statements: Useful for simplifying code like no specifying the namespace will assume you are declaring it in the global namespace, writing code outside any method in a simple project will assume that it belongs to the `main()` method. In my opinion this is a very dangerous weapon if not used properly.
+* Top-level statements: Useful for simplifying code like no specifying the namespace will assume you are declaring it in the global namespace, writing code outside any method in a simple project will assume that it belongs to the `main()` method (which in my opinion decreases the cognitive level of your code).
 * Record types: This is an immutable complex reference type. If we define a record type object, then its properties cannot be changed once initialized. This is very helpful when we compare two record types; if their properties have the same values, then the objects are equal. This does not happen with reference types, that only return true when we compare two references to the same instance.
 * Init-only setters: This is a very useful feature since it lets you to set an object's property value on its initialization without the need of declaring a constructor that takes those values. This improves the readability of the code in my honest opinion.
 
