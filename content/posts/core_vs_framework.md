@@ -61,7 +61,7 @@ Microsoft has been working on all these differences within their frameworks ecos
 * Record types: This is an immutable complex reference type. If we define a record type object, then its properties cannot be changed once initialized. This is very helpful when we compare two record types; if their properties have the same values, then the objects are equal. This does not happen with reference types, that only return true when we compare two references to the same instance.
 * Init-only setters: This is a very useful feature since it lets you to set an object's property value on its initialization without the need of declaring a constructor that takes those values. This improves the readability of the code in my honest opinion.
 
-###### .NET MAUI:
+###### .NET MAUI (upcoming next year with .NET 6):
 
 The new .NET Multi-platform App UI (MAUI) will let you use the same code for defining Android, iOS, macOS and Windows user interfaces, all in one project. This becomes the evolution of Xamarin and it supports modern patterns as MVVM and MVU.
 
