@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Packaging adventures volume II: Windows</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/svg" href="/assets/images/logo.svg" />
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+<link rel="stylesheet" href="/assets/css/single.css" /> 
+</head>
+
+<body>
+    <div class="container-fluid bg-dimmed wrapper">
+        
+         <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.theimpostersyndrome.dev/">
+            <img src="/assets/images/logo.svg">The imposter syndrome</a>
+        <button class="navbar-toggler navbar-light" type="button" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="top-nav-items">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+            </ul>
+        </div>
+    </div>
+</nav> 
+
+        
+        
+<div class="container p-0 read-area">
+    
+    <div class="hero-area col-sm-12" style='background-image: url(/images/posts/windowspkg.png);'>
+    </div>
+
+    
+    <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+            <img class="rounded-circle" src='/images/avatar.png' />
+            <h5 class="author-name">David Fernández</h5>
+            <p>January 30, 2021</p>
+        </div>
+
+        <div class="title">
+            <h1>Packaging adventures volume II: Windows</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+            <p>So here we are with the second part of the packaging adventures. If you remember, we already talked about <a href="https://www.theimpostersyndrome.dev/posts/macospackaging/">macOS packaging</a> a few months ago and now it&rsquo;s time to show you how to do it on Windows. Windows has many ways to package your applications and I am currently using another one for my production packages, but that will be explained in a third part of this packaging adventures. Let&rsquo;s start with one of the most basic ways to achieve it. Let&rsquo;s go!</p>
+<hr>
+<h5 id="what-are-we-going-to-use">What are we going to use?</h5>
+<ul>
+<li>Visual Studio for Windows (2019 version in my case, but you can also use 2015 and 2017)</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=visualstudioclient.MicrosoftVisualStudio2017InstallerProjects">Visual Studio installer projects extension</a></li>
+<li>The project solution we want to package</li>
+</ul>
+<h5 id="first-setup">First setup:</h5>
+<p>After first adding the <a href="https://marketplace.visualstudio.com/items?itemName=visualstudioclient.MicrosoftVisualStudio2017InstallerProjects">Visual Studio installer projects extension</a> to our Visual Studio installation by installing the extension in the link provided, we need to open our project in Visual Studio and right-click on the solution, then add a new &ldquo;Setup Project&rdquo;.</p>
+<p>After that, you will get a new setup project with an &ldquo;Application folder&rdquo;. You need to visualize the &ldquo;Application folder&rdquo; as the installation resulting directory in the target machine that is installing your application. In my case, my application needs some subfolders so I just need to add them by right-clicking on that directory and selecting the add directory option.</p>
+<p>**<code>Note: This last step creating the sub-directories structure is optional. Add inside them whatever you need by right-clicking on them and selecting the &quot;Add&quot; option.</code></p>
+<h5 id="copying-the-application-output-into-our-application-folder">Copying the application output into our Application Folder:</h5>
+<p>This is the most important step in order to get the build output inside our application folder to have it on the target machine after the installation. For that:</p>
+<ul>
+<li>Select the &ldquo;Application Folder&rdquo; inside the Setup Project and select the &ldquo;Add &raquo; Project Output&rdquo; option.</li>
+<li>Select your main project (startup project) on the &ldquo;project&rdquo; dropdown.</li>
+<li>Select &ldquo;Primary output&rdquo; on the list in order to indicate that your main project output will be the main output of your application.</li>
+<li>Leave the &ldquo;configuration&rdquo; as active by default if you want to generate packages depending on the active configuration or select the desired one if you just need to create debug or release installers.</li>
+<li>Click OK</li>
+</ul>
+<p>You can repeat this process but selecting &ldquo;Add &raquo; Assembly&rdquo; in order to add any extra assembly to your output.</p>
+<p>On the Visual Studio top menu bar, select &ldquo;Build &raquo; Configuration Manager&rdquo; and make sure you check on each &ldquo;Build&rdquo; checkbox you want to build when building the whole solution, this will avoid building projects you do don&rsquo;t really need for the final application like a unit tests project. This applies for the selected &ldquo;Active solution configuration&rdquo;, so keep an eye on that because we can be missing a build of any important project for our application when changing the configuration.</p>
+<h5 id="adding-dependencies-to-the-installer-bootstrapper">Adding dependencies to the installer bootstrapper:</h5>
+<p>Probably you will also need to include any dependency like the C++ redistributable files. In this case you can do this by getting its merge module by your own and adding them to your setup project by right-clicking the &ldquo;setup project in your solution &raquo; Add &raquo; Merge Module&rdquo;.</p>
+<p>Another way to add common Microsoft prerequisites is by accessing the Setup project properties by right-clicking on it and selecting the prerequisites option. In my case I have selected .NET Framework 4.7.2 (which is pre-selected) and the C++ runtime libraries for x64 architecture processors.</p>
+<h5 id="adding-a-desktop-shortcut">Adding a desktop shortcut:</h5>
+<p>Easy peasy, just select the &ldquo;Application Folder&rdquo; and then find and right-click on the &ldquo;Primary output from <your project name>&rdquo;. This will generate a &ldquo;Shortcut to primary output from <your project name>&rdquo; and you just need to rename it as you wish, for example &ldquo;MyProject shortcut&rdquo;. Then drag and drop it to the &ldquo;User&rsquo;s Desktop&rdquo; directory (maybe you want to have it on your User&rsquo;s Programs Menu, also).</p>
+<h5 id="custom-final-installed-program-setups">Custom final installed program setups:</h5>
+<p>I have set up some other properties for my final project. For this we are going to use the Visual Studio Properties Window (VS top menu &raquo; View &raquo; Properties Window):</p>
+<blockquote>
+<p>Application Folder</p>
+<blockquote>
+<ul>
+<li><code>DefaultLocation</code> -&raquo; Set your installer&rsquo;s default install location on the target machine.</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Properties of your program&rsquo;s shortcut (created in previous steps)</p>
+<blockquote>
+<ul>
+<li><code>Name</code> -&raquo; Set the shortcut name.</li>
+<li><code>Icon</code> -&raquo; Set an icon for the shortcut.</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Setup project properties</p>
+<blockquote>
+<ul>
+<li><code>Author</code> -&raquo; Your name or your company&rsquo;s name.</li>
+<li><code>Manufacturer</code> -&raquo; Your company&rsquo;s name.</li>
+<li><code>AddRemoveProgramsIcon</code> -&raquo; Set the icon that your application will show on the Microsoft&rsquo;s &ldquo;Add or Remove Programs&rdquo; window.</li>
+<li><code>TargetPlatform</code> -&raquo; Important to specify if your target platform is x86 or x64 bit.</li>
+<li><code>Version</code> -&raquo; Your application&rsquo;s version</li>
+</ul>
+</blockquote>
+</blockquote>
+<h5 id="customize-your-setup-wizard">Customize your setup wizard:</h5>
+<p>Now that we have all our project setup we maybe have some questions like: Will the install wizard have a default license agreement? Can I put my super cool banner on it? How many steps does the wizard have? Don&rsquo;t worry, I got you covered.</p>
+<p>Select the Setup project in your solution explorer and &ldquo;right-click on it &raquo; View &raquo; User interface&rdquo;. Here you are. The user interface for the installation wizard! You can add or remove some views and customize them through the VS properties window. For example, in order to add a license agreement you need to add a &ldquo;License Agreement&rdquo; dialog to the &ldquo;Start&rdquo; group and you can drag and drop it on the wizard sequence in order to make it appear whenever you want. You will need to encode your license file as an RTF file and name it <code>license.rtf</code></p>
+<p>**<code>Banner advise: Not sure if there is another way, but the best image size I have found for the banner is 500x70</code></p>
+<h5 id="installer-generation">Installer generation:</h5>
+<p>Just build your solution and check out for the output directory (usually bin/Debug or bin/Release) when finished. You should have a <code>Setup.exe</code> file and a <code>MyProject.msi</code> that you can now distribute!</p>
+<h5 id="conclusions">Conclusions:</h5>
+<p>As you may notice by reading this article, this process is maybe useful for mini projects or a one-time installer generation, but a lot of questions came up on my mind while investigating this. How are we going to automate this? Is the installation wizard going to be that ugly-old-fashion style? How can I add conditions and pre or post-installation actions? How do I get a single <code>.exe</code> file instead a bootstrapper and a <code>.msi</code> file?</p>
+<p>I have some notes that I took while investigating trying to answer some of these questions, like using IExpress to get a single <code>.exe</code> or using the &ldquo;custom actions&rdquo; for pre-installation actions. One good thing is that IExpress translates your actions into a single command that you can use to automate this in your CI/CD pipeline, but I just find this so tedious so I started looking for more modern alternatives. That&rsquo;s how I found Wix and it is just great.</p>
+<h5 id="sources">Sources:</h5>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/2kt85ked(v%3dvs.100)">https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/2kt85ked(v%3dvs.100)</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf">https://docs.microsoft.com/en-us/dotnet/framework/wcf/whats-wcf</a></li>
+<li><a href="https://docs.microsoft.com/en-us/cpp/windows/walkthrough-deploying-a-visual-cpp-application-by-using-a-setup-project?view=msvc-160&amp;viewFallbackFrom=vs-2019">https://docs.microsoft.com/en-us/cpp/windows/walkthrough-deploying-a-visual-cpp-application-by-using-a-setup-project?view=msvc-160&amp;viewFallbackFrom=vs-2019</a></li>
+<li><a href="https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.ikya100/steps_installer.htm">https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.ikya100/steps_installer.htm</a></li>
+<li><a href="https://stackoverflow.com/questions/4182364/how-to-add-licence-agreement-in-the-setup-project">https://stackoverflow.com/questions/4182364/how-to-add-licence-agreement-in-the-setup-project</a></li>
+</ul>
+<hr>
+<p><br /></p>
+<p>As I mentioned before, this is just one of many other ways to package a Windows application and I will explain the way I use Wix to create my production and stage packages. I just find this VS package generation procedure good to understand what we are actually doing and what we achieve doing it. Wix packaging coming on adventure III!</p>
+<p>As always, if you find something that is not well explained or that is wrong, please let me know in the comments below. See you all in the next post!</p>
+
+        </div>
+
+        
+        <hr />
+        <div class="row next-prev-navigator">
+                          
+            <div class="col-md-12 next-article">
+                <a href="/posts/core_vs_framework/" class="btn btn-outline-info">
+                    <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+                    <br />
+                    <span>.NET Framework vs .NET Core</span>
+                </a>
+            </div>
+              
+        </div>
+        <hr />
+        
+         <div id="disqus_thread"></div>
+<script>
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    (function() { 
+        var d = document,
+            s = d.createElement('script');
+        d.type = "text/javascript";
+        d.async = true;
+        s.src = 'https://thesyndromeimposter.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+    </div>
+    
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+        <div class="row text-left">
+            <div class="col-md-4 col-sm-12">
+                <h5>Navigation</h5>
+                
+                <ul>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#home">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#about">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#skills">Skills</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#experiences">Experiences</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#projects">Projects</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5>Contact Me</h5>
+                <ul>
+                    
+                    <li><span>Email: </span> <span>impostersyndrome.blog@gmail.com</span></li>
+                    
+                </ul>
+            </div>
+        </div>
+        </form>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-center icons">
+        <a class="py-2 px-2 d-none d-lg-inline-block" href="https://dfernandezramos.github.io/index.xml">RSS feed <i class="fas fa-rss fa-blue"></i></a>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-md-4">
+                <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+                    <img src="/assets/images/logo-inverted.png"> Toha
+                </a>
+            </div>
+            <div class="col-md-4">© 2020 Copyright.</div>
+            <div class="col-md-4">
+                Powered by <a href="https://gohugo.io/">Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+                <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/jquery.filterizr.min.js"></script>
+
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script src="/assets/js/single.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+     
+</body>
+
+</html>
