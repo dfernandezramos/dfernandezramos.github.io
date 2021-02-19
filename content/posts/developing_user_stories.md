@@ -1,6 +1,6 @@
 ---
 title: "Developing user stories"
-date: 2020-02-19
+date: 2021-02-19
 hero: /images/posts/miscommunication.png
 # categories:
 # - writing-posts
