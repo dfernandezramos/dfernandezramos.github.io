@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Developing user stories</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/svg" href="/assets/images/logo.svg" />
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+<link rel="stylesheet" href="/assets/css/single.css" /> 
+</head>
+
+<body>
+    <div class="container-fluid bg-dimmed wrapper">
+        
+         <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.theimpostersyndrome.dev/">
+            <img src="/assets/images/logo.svg">The imposter syndrome</a>
+        <button class="navbar-toggler navbar-light" type="button" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="top-nav-items">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+            </ul>
+        </div>
+    </div>
+</nav> 
+
+        
+        
+<div class="container p-0 read-area">
+    
+    <div class="hero-area col-sm-12" style='background-image: url(/images/posts/miscommunication.png);'>
+    </div>
+
+    
+    <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+            <img class="rounded-circle" src='/images/avatar.png' />
+            <h5 class="author-name">David Fernández</h5>
+            <p>February 19, 2020</p>
+        </div>
+
+        <div class="title">
+            <h1>Developing user stories</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+            <p>Last week, in a little meeting we usually do to close our SCRUM Sprint period of two weeks, I was showing all the new features I had developed for our product. One of the features was not accepted and therefore its related user story was moved back from &ldquo;QA Review&rdquo; to &ldquo;On development&rdquo; again. I misunderstood my task.</p>
+<p>What can we do here? Should we just tell the developer what was wrong and wait for him to change it ASAP or maybe should we try to guess what led him to do it that way the first time to see if we have a problem in our product development workflow? We think that the only way to improve is by learning from our own mistakes and we checked what was wrong: the user story was not well defined and I decided to do a freestyle with my imagination for the definition of done.</p>
+<p>Generally an Agile user story is written by the product owner or product manager and submitted for review. It is very important to polish the way we define them since it is the main reference point between the developers and the rest of the people involved in the product definition, therefore the main focus of miscommunications.</p>
+<hr>
+<h5 id="how-was-the-user-story-defined-in-first-place">How was the user story defined in first place?</h5>
+<p>Here you can see how the user story was defined. The main concept is pretty clear. Our software works with a previous login and we want a place where the user can see which user is logged in and offer him the possibility to log out.</p>
+<img src="/images/posts/userstory_bad.png"
+    
+    
+    
+    
+    
+>
+
+<p>You maybe already noticed that this is not a proper user story and it definitely needs more information but trust me, as a developer when you are on a hurry most of the times your head does not stop to think correctly and say: hey, you can do it because you already (barely) remember that talk you had with the project manager and you have this new feature perfectly pictured in your head. WRONG!</p>
+<p>Where is the place you have to put that information? Is the user email the only information we have? Should the log out option do anything different than what it does now? Etc.</p>
+<h5 id="what-was-the-first-error">What was the first error?</h5>
+<p>Was it defining this way that user story? Most of the time product managers create their main ideas of a user story or task and let them in the backlog for future refinement and definition.</p>
+<p>Was it starting to develop that story without asking for more definition? As I said, developers can think they have  most of the information because of internal talks or chat conversations and most of the time they are running in a hurry because of deadlines (and this happen so often in small teams where one person does more than one job and has a better vision of the product, or at least thinks he/she has).</p>
+<p>So what? Where was the first error? Well, we are a team and as a team we all have to take part in that kind of errors. In the first place, the project manager could have been aware to not put that user story to be evaluated by the technical team in the Sprint planning, but then the technical team could have been aware of that and rejected to evaluate the story points needed to finish that story without a definition. They all discussed that story and then voted for it.</p>
+<p>If a story ends up on a sprint board, it means that all of the team agreed on that and therefore has been involved in it.</p>
+<h5 id="hands-on-a-properly-defined-story">Hands on a properly defined story:</h5>
+<p>Keep in mind that each company or team is a world and I&rsquo;m going to define how a proper user story or task should be defined for me as a developer.</p>
+<blockquote>
+<p>What information do we need on a user story or task?</p>
+<blockquote>
+<ul>
+<li><code>Rationale</code> -&raquo; The short way to explain the reason for the story. We use the next format: <code>As a *** I want to *** so that ***</code></li>
+<li><code>Description (optional)</code> -&raquo; A detailed description of what we want and explain the behavior of the feature (add design images if needed). It is optional because sometimes the rationale can already describe pretty well what we need.</li>
+<li><code>Acceptance criteria</code> -&raquo; Series of what we call &ldquo;story test&rdquo; to clarify the desired behavior. These tests are used by the development team for a better understanding on what to build and test and by the product owner to confirm that the user story has been implemented to his satisfaction. Every User Story must have defined the acceptance criteria. It can also help the QA team to understand the feature and define their first basic tests.</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>What information do we need on a bug?</p>
+<blockquote>
+<ul>
+<li><code>Description</code> -&raquo; A detailed description of what happens.</li>
+<li><code>Steps to reproduce</code> -&raquo; Detailed step by step guide to reproduce the issue with the current result and the expected result.</li>
+<li><code>Resources (optional)</code> -&raquo; Log files the user has sent, images, videos, etc.</li>
+</ul>
+</blockquote>
+</blockquote>
+<h5 id="result-and-conclusions">Result and conclusions:</h5>
+<p>After following the proposed guidelines we can obtain a very different user story from the first one I have posted at the beginning of this post:</p>
+<img src="/images/posts/userstory_comparison.png"
+    
+    
+    
+    
+    
+>
+
+<p>Now we don&rsquo;t only have a user story that barely tells what we want but it also tells you why. In addition, the developer has a context and definition with images whe the design in case it is needed and also has a very important section for the definition of done with some scenarios that can help not only the developer but also the project manager and the QA team to do their respective work.</p>
+<p>This week I have read a LinkedIn post from a good ex-teammate <a href="https://es.linkedin.com/in/jorgelunakuhn">Jorge Luna</a>, who is the CPO in its company now, saying that he has created some tags on Jira for all the stories like &ldquo;Needs definition&rdquo;, &ldquo;Needs design&rdquo;, &ldquo;Needs whatever&rdquo; in order to filter them and avoid forgetting something and start a sprint planning with undefined stories. It&rsquo;s so tedious when all the team has to stop the sprint planification waiting for the project manager to define it &ldquo;in a minute&rdquo; because it is very important and it needs to be evaluated for this sprint.</p>
+<h5 id="sources">Sources:</h5>
+<ul>
+<li><a href="https://www.atlassian.com/agile/project-management/user-stories">https://www.atlassian.com/agile/project-management/user-stories</a></li>
+<li><a href="https://www.workfront.com/project-management/methodologies/scrum/sprints">https://www.workfront.com/project-management/methodologies/scrum/sprints</a></li>
+</ul>
+<hr>
+<p><br /></p>
+<p>As developers, we should learn to say a big NO to not defined tasks or stories because if something goes wrong then you will be the one who has done it wrong because&hellip; Why did you start working on something you needed more information about without asking for it?</p>
+<p>If you would like to know something else about our Agile process don&rsquo;t hesitate to comment if below. See you all in the next post!</p>
+
+        </div>
+
+        
+        <hr />
+        <div class="row next-prev-navigator">
+               
+            <div class="col-md-6 previous-article">
+                <a href="/posts/imposter/" class="btn btn-outline-info">
+                    <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+                    <br />
+                    <span>I&#39;m an imposter</span>
+                </a>
+            </div>
+                           
+        </div>
+        <hr />
+        
+         <div id="disqus_thread"></div>
+<script>
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    (function() { 
+        var d = document,
+            s = d.createElement('script');
+        d.type = "text/javascript";
+        d.async = true;
+        s.src = 'https://thesyndromeimposter.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+    </div>
+    
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+        <div class="row text-left">
+            <div class="col-md-4 col-sm-12">
+                <h5>Navigation</h5>
+                
+                <ul>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#home">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#about">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#skills">Skills</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#experiences">Experiences</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#projects">Projects</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5>Contact Me</h5>
+                <ul>
+                    
+                    <li><span>Email: </span> <span>impostersyndrome.blog@gmail.com</span></li>
+                    
+                </ul>
+            </div>
+        </div>
+        </form>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-center icons">
+        <a class="py-2 px-2 d-none d-lg-inline-block" href="https://dfernandezramos.github.io/index.xml">RSS feed <i class="fas fa-rss fa-blue"></i></a>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-md-4">
+                <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+                    <img src="/assets/images/logo-inverted.png"> Toha
+                </a>
+            </div>
+            <div class="col-md-4">© 2020 Copyright.</div>
+            <div class="col-md-4">
+                Powered by <a href="https://gohugo.io/">Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+                <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/jquery.filterizr.min.js"></script>
+
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script src="/assets/js/single.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+     
+</body>
+
+</html>
