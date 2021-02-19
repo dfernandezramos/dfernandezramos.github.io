@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>writing-posts-category on The imposter syndrome</title>
+    <link>https://www.theimpostersyndrome.dev/categories/writing-posts-category/</link>
+    <description>Recent content in writing-posts-category on The imposter syndrome</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.theimpostersyndrome.dev/categories/writing-posts-category/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git survival kit</title>
+      <link>https://www.theimpostersyndrome.dev/posts/git_survival_kit/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.theimpostersyndrome.dev/posts/git_survival_kit/</guid>
+      <description>When I first started in my current company I hadn&amp;rsquo;t used any version control system so when I started using Git it was a little tricky. Lucky me I had one of the best developers I&amp;rsquo;ve ever worked with, Víctor Guzmán. I remember he said something like: &amp;ldquo;Ok, you can use a GUI for a bad Git usage or you can use the Terminal for learning real Git usage. I use Terminal so I won&amp;rsquo;t help you with if you don&amp;rsquo;t use it&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

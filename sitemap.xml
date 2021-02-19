@@ -3,7 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.theimpostersyndrome.dev/categories/</loc>
+    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.theimpostersyndrome.dev/posts/developing_user_stories/</loc>
+    <lastmod>2021-02-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.theimpostersyndrome.dev/categories/development/</loc>
     <lastmod>2021-02-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -18,7 +28,17 @@
   </url>
   
   <url>
+    <loc>https://www.theimpostersyndrome.dev/categories/packaging/</loc>
+    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/</loc>
+    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.theimpostersyndrome.dev/categories/windows/</loc>
     <lastmod>2021-01-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,8 +48,18 @@
   </url>
   
   <url>
+    <loc>https://www.theimpostersyndrome.dev/categories/dotnet/</loc>
+    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.theimpostersyndrome.dev/posts/dotnetinabox/</loc>
     <lastmod>2020-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.theimpostersyndrome.dev/categories/macos/</loc>
+    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,12 +73,13 @@
   </url>
   
   <url>
-    <loc>https://www.theimpostersyndrome.dev/posts/imposter/</loc>
-    <lastmod>2020-07-03T00:00:00+00:00</lastmod>
+    <loc>https://www.theimpostersyndrome.dev/categories/writing-posts-category/</loc>
+    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.theimpostersyndrome.dev/categories/</loc>
+    <loc>https://www.theimpostersyndrome.dev/posts/imposter/</loc>
+    <lastmod>2020-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
