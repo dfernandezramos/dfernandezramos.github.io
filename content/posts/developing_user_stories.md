@@ -2,9 +2,8 @@
 title: "Developing user stories"
 date: 2021-02-19
 hero: /images/posts/miscommunication.png
-# categories:
-# - writing-posts
-# - writing-posts-category
+categories:
+- Development
 ---
 
 Last week, in a little meeting we usually do to close our SCRUM Sprint period of two weeks, I was showing all the new features I had developed for our product. One of the features was not accepted and therefore its related user story was moved back from "QA Review" to "On development" again. I misunderstood my task.

@@ -2,9 +2,9 @@
 title: "Packaging adventures volume II: Windows"
 date: 2021-01-30
 hero: /images/posts/windowspkg.png
-# categories:
-# - writing-posts
-# - writing-posts-category
+categories:
+- Packaging
+- Windows
 ---
 
 So here we are with the second part of the packaging adventures. If you remember, we already talked about [macOS packaging](https://www.theimpostersyndrome.dev/posts/macospackaging/) a few months ago and now it's time to show you how to do it on Windows. Windows has many ways to package your applications and I am currently using another one for my production packages, but that will be explained in a third part of this packaging adventures. Let's start with one of the most basic ways to achieve it. Let's go!

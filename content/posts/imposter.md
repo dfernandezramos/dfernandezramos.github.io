@@ -2,9 +2,6 @@
 title: "I'm an imposter"
 date: 2020-07-03
 hero: /images/posts/imposter.png
-# categories:
-# - writing-posts
-# - writing-posts-category
 ---
 
 

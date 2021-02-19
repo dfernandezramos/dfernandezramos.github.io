@@ -2,9 +2,9 @@
 title: "Git survival kit"
 date: 2020-07-07
 hero: /images/posts/git.png
-# categories:
-# - writing-posts
-# - writing-posts-category
+categories:
+- Development
+- writing-posts-category
 ---
 
 

@@ -2,9 +2,9 @@
 title: ".NET Framework vs .NET Core"
 date: 2020-12-28
 hero: /images/posts/ecosystem.png
-# categories:
-# - writing-posts
-# - writing-posts-category
+categories:
+- DotNet
+- Development
 ---
 
 First things first, I know I’ve been out for a couple of months without posting any article on my site. Sorry for that! I’ve been busy finishing up my computer science degree and I wanted to boost my final project by giving it my free time as much as possible. Thanks to that I have written down some Xamarin things to investigate and share them here, also. Now let’s get back to work!

@@ -2,9 +2,9 @@
 title: "Packaging adventures volume I: macOS"
 date: 2020-08-20
 hero: /images/posts/awesomepkgmac.png
-# categories:
-# - writing-posts
-# - writing-posts-category
+categories:
+- Packaging
+- macOS
 ---
 
 If I had to define working (right) as a macOS developer out of the bounds of Xcode IDE with one expression I would do it as: "Oh, there is one more easy not easy thing Apple wants us to do to make it work properly". Lately I've been working and struggling hard with packaging the multiplatform application I work on. When Apple released macOS Catalina they introduced a lot of security changes and a lot of applications suddenly stopped working turning App Store outsider developers lifes in a little nightmare.
