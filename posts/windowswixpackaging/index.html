@@ -62,7 +62,7 @@
         </div>
 
         <div class="post-content" id="post-content">
-            <p>Third and final chapter of the packaging adventures. The previous post about <a href="https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/">Windows packaging</a> was posted a couple of months ago and we learned how to create a simple Windows installer thanks to a Visual Studio extension. If you remember properly, there were some inconvenient like having two different installers (an MSI file for the app and an EXE file for the setup installer with the required extra components for our application). If you need a single EXE file, more modern-looking and cover the deficiencies of the previous packaging system, keep reading. I’ve got something for you.</p>
+            <p>Third and final chapter of the packaging adventures. The previous post about <a href="https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/">Windows packaging</a> was posted a couple of months ago and we learned how to create a simple Windows installer thanks to a Visual Studio extension. If you remember properly, there were some inconvenient like having two different installers (an MSI file for the app and an EXE file for the setup installer with the required extra components for our application). If you need a single EXE file, more modern-looking and cover the deficiencies of the previous packaging system, keep reading. I’ve got something for you!</p>
 <hr>
 <h5 id="what-are-we-going-to-use">What are we going to use?</h5>
 <ul>
@@ -70,8 +70,10 @@
 <li>Terminal</li>
 </ul>
 <p><em><code>For this kind of process I use Python scripts but it is obviously not necessary. I just like to automate things and let my CI/CD Jenkins node do the magic on each build.</code></em></p>
+<p><br /></p>
 <h5 id="first-setup">First setup:</h5>
 <p>What we really need to have as first step is your project&rsquo;s bin directory with all your application libraries and needed assemblies, resources, etc. So let’s assume you already have successfully compiled your application. Let’s also assume you have already installed the WiX toolset build tools on your Windows machine.</p>
+<p><br /></p>
 <h5 id="copy-the-applications-output-to-a-temp-directory">Copy the application&rsquo;s output to a temp directory:</h5>
 <ol>
 <li>The first thing would be to create a temporal directory that we will use to create the package.</li>
@@ -79,6 +81,7 @@
 <li>(Optional) Remove content you know you won’t need for your package like tests libraries.</li>
 <li>(Optional) Copy other resources or external libraries you know your package will include.</li>
 </ol>
+<p><br /></p>
 <h5 id="create-a-merge-module-for-your-application">Create a merge module for your application:</h5>
 <p>Wait, what is a merge module? In a nutshell, it is another kind of installer that contains your application’s components. In fact, it is not an installer but more like a database with the components your final installer will use at installation time. It helps you to modularize your software installation. This way you can use your merge module in different installers.</p>
 <p>For this step, we will need what I call &ldquo;utils&rdquo; WXS file. There are tons of combinations to create your utils file, so I recommend you to check <a href="https://wixtoolset.org/documentation/manual/v3/overview/files.html">WiX documentation</a> and create a file that fits your application needs. In my case, I am using this <code>utils.wxs</code> for each installer generation that, in a nutshell, indicates the full path for:</p>
@@ -197,6 +200,7 @@ Click here to expand the myapplication_msm.wxs example file
 <p>This command will generate a <code>myapplication.msm</code> file. This is the merge module!</p>
 </blockquote>
 </blockquote>
+<p><br /></p>
 <h5 id="create-your-application-msi-file">Create your application MSI file:</h5>
 <p>Let&rsquo;s create the simple installer file for our application. This file is an MSI file which will contain our application. We can also add some custom actions that will be applied pre or post installing our software. For that, we first need a <code>Config.wxi</code> file with some important information about the application:</p>
 <details>
@@ -334,6 +338,7 @@ Click here to expand the myapplication_msi.wxs example file
 <p>This command will generate a <code>myapplication.msi</code> file.</p>
 </blockquote>
 </blockquote>
+<p><br /></p>
 <h5 id="create-your-application-exe-file">Create your application EXE file:</h5>
 <p>For this final step, we will need a <code>myapplication_burn.wxs</code> file. Please also note that we are using again the same <code>Config.wxi</code> file we used in the previous step for the MSI file generation. It basically contains:</p>
 <ul>
@@ -509,9 +514,11 @@ Click here to expand the SidebarTheme.xml example file
 <p>This command will generate a <code>myapplication.exe</code> file.</p>
 </blockquote>
 </blockquote>
+<p><br /></p>
 <h5 id="conclusions">Conclusions:</h5>
 <p>Just a few minutes after starting writing this post I realized that until now this was going to be the largest one by far, so it is very provable that maybe I removed or skipped a little step I consider not that much important that maybe could help someone else. If so please let me know and I will try to review it, but probably the best way to go is searching on the internet as I did the first time I created this installer EXE file generation, because there is a lot information out there about this topic that can help you.</p>
 <p>WiX is by far the method I like the most to generate a Windows installer since generating it with the Visual Studio Installer projects extension lacks a lot of customizations that WiX doesn’t. Also is totally automatable and once you rule your process it is super easy to maintain it and rarely you will touch it again if it works as expected.</p>
+<p><br /></p>
 <h5 id="sources">Sources:</h5>
 <ul>
 <li><a href="https://wixtoolset.org/releases/">https://wixtoolset.org/releases/</a></li>
