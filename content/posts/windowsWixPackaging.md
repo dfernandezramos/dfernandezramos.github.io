@@ -7,7 +7,7 @@ categories:
 - Windows
 ---
 
-Third and final chapter of the packaging adventures. The previous post about [Windows packaging](https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/) was posted a couple of months ago and we learned how to create a simple Windows installer thanks to a Visual Studio extension. If you remember properly, there were some inconvenient like having two different installers (an MSI file for the app and an EXE file for the setup installer with the required extra components for our application). If you need a single EXE file, more modern-looking and cover the deficiencies of the previous packaging system, keep reading. I’ve got something for you.
+Third and final chapter of the packaging adventures. The previous post about [Windows packaging](https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/) was posted a couple of months ago and we learned how to create a simple Windows installer thanks to a Visual Studio extension. If you remember properly, there were some inconvenient like having two different installers (an MSI file for the app and an EXE file for the setup installer with the required extra components for our application). If you need a single EXE file, more modern-looking and cover the deficiencies of the previous packaging system, keep reading. I’ve got something for you!
 
 ---
 ##### What are we going to use?
@@ -17,9 +17,13 @@ Third and final chapter of the packaging adventures. The previous post about [Wi
 
 *`For this kind of process I use Python scripts but it is obviously not necessary. I just like to automate things and let my CI/CD Jenkins node do the magic on each build.`*
 
+<br />
+
 ##### First setup:
 
 What we really need to have as first step is your project's bin directory with all your application libraries and needed assemblies, resources, etc. So let’s assume you already have successfully compiled your application. Let’s also assume you have already installed the WiX toolset build tools on your Windows machine.
+
+<br />
 
 ##### Copy the application's output to a temp directory:
 
@@ -27,6 +31,8 @@ What we really need to have as first step is your project's bin directory with a
 2. Second, copy your project’s output directory content to the temporal directory we just created in the previous step.
 3. (Optional) Remove content you know you won’t need for your package like tests libraries.
 4. (Optional) Copy other resources or external libraries you know your package will include.
+
+<br />
 
 ##### Create a merge module for your application:
 
@@ -152,6 +158,8 @@ Hands on! Now we have all the necessary stuff to start. Let’s use the WiX tool
 
 > <WIX_TOOLSET_BIN_PATH>/light.exe myapplication_msm.wixobj utils.wixobj -o myapplication.msm -sval
 >> This command will generate a `myapplication.msm` file. This is the merge module!
+
+<br />
 
 ##### Create your application MSI file:
 
@@ -297,6 +305,8 @@ Again. Let’s use the WiX toolset to generate the MSI file. These are the comma
 
 > <WIX_TOOLSET_BIN_PATH>/light.exe myapplication_msi.wixobj utils.wixobj -o myapplication.msi -ext WixUIExtension -ext WixUtilExtension -ext WixBalExtension -sval
 >> This command will generate a `myapplication.msi` file.
+
+<br />
 
 ##### Create your application EXE file:
 
@@ -485,11 +495,15 @@ Again and again! Let’s use the WiX toolset to generate the final EXE file. The
 > <WIX_TOOLSET_BIN_PATH>/light.exe myapplication_burn.wixobj utils.wixobj -o myapplication.exe -ext WixUIExtension -ext WixUtilExtension -ext WixBalExtension -sval
 >> This command will generate a `myapplication.exe` file.
 
+<br />
+
 ##### Conclusions:
 
 Just a few minutes after starting writing this post I realized that until now this was going to be the largest one by far, so it is very provable that maybe I removed or skipped a little step I consider not that much important that maybe could help someone else. If so please let me know and I will try to review it, but probably the best way to go is searching on the internet as I did the first time I created this installer EXE file generation, because there is a lot information out there about this topic that can help you.
 
 WiX is by far the method I like the most to generate a Windows installer since generating it with the Visual Studio Installer projects extension lacks a lot of customizations that WiX doesn’t. Also is totally automatable and once you rule your process it is super easy to maintain it and rarely you will touch it again if it works as expected.
+
+<br />
 
 ##### Sources:
 
