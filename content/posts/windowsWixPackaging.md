@@ -27,6 +27,8 @@ What we really need to have as first step is your project's bin directory with a
 
 ##### Copy the application's output to a temp directory:
 
+This step could be ignored but I think it is good to have a temp directory where we can delete some files we know we don't need in the final application but maybe are important for your original project output directory. In my honest opinion, this can help you to have a big picture of how your final application installation directory will look like.
+
 1. The first thing would be to create a temporal directory that we will use to create the package.
 2. Second, copy your project’s output directory content to the temporal directory we just created in the previous step.
 3. (Optional) Remove content you know you won’t need for your package like tests libraries.
@@ -118,7 +120,7 @@ In addition, we are going to create our own WXS file listing all the files of ou
 * Module information: Which indicates an identifier, a language code (1033 for English) and the application version.
 * Package information: Contained by the module node. It indicates the description of the application, an identifier and the manufacturer.
 * Installation root directory: Contained by the module node.
-* Application files list: Contained by the installation root directory node. It contains a series of `Component` nodes for each application file. It also can contain as much subdirectories as our application needs.
+* Application files list: Contained by the installation root directory node. It contains a series of `Component` nodes for each application file. It also can contain as much subdirectories as our application needs. Remember to use the path of the temp directory where your copied files are but, again, if you prefer to use the original application's output directory feel free to use it instead.
 
 <details>
 <summary>
