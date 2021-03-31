@@ -75,6 +75,7 @@
 <p>What we really need to have as first step is your project&rsquo;s bin directory with all your application libraries and needed assemblies, resources, etc. So let’s assume you already have successfully compiled your application. Let’s also assume you have already installed the WiX toolset build tools on your Windows machine.</p>
 <p><br /></p>
 <h5 id="copy-the-applications-output-to-a-temp-directory">Copy the application&rsquo;s output to a temp directory:</h5>
+<p>This step could be ignored but I think it is good to have a temp directory where we can delete some files we know we don&rsquo;t need in the final application but maybe are important for your original project output directory. In my honest opinion, this can help you to have a big picture of how your final application installation directory will look like.</p>
 <ol>
 <li>The first thing would be to create a temporal directory that we will use to create the package.</li>
 <li>Second, copy your project’s output directory content to the temporal directory we just created in the previous step.</li>
@@ -159,7 +160,7 @@ Click here to expand the utils.wxs example file
 <li>Module information: Which indicates an identifier, a language code (1033 for English) and the application version.</li>
 <li>Package information: Contained by the module node. It indicates the description of the application, an identifier and the manufacturer.</li>
 <li>Installation root directory: Contained by the module node.</li>
-<li>Application files list: Contained by the installation root directory node. It contains a series of <code>Component</code> nodes for each application file. It also can contain as much subdirectories as our application needs.</li>
+<li>Application files list: Contained by the installation root directory node. It contains a series of <code>Component</code> nodes for each application file. It also can contain as much subdirectories as our application needs. Remember to use the path of the temp directory where your copied files are but, again, if you prefer to use the original application&rsquo;s output directory feel free to use it instead.</li>
 </ul>
 <details>
 <summary>
