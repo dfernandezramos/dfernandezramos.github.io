@@ -501,7 +501,7 @@ Again and again! Let’s use the WiX toolset to generate the final EXE file. The
 
 ##### Conclusions:
 
-Just a few minutes after starting writing this post I realized that until now this was going to be the largest one by far, so it is very provable that maybe I removed or skipped a little step I consider not that much important that maybe could help someone else. If so please let me know and I will try to review it, but probably the best way to go is searching on the internet as I did the first time I created this installer EXE file generation, because there is a lot information out there about this topic that can help you.
+Just a few minutes after starting writing this post I realized that until now this was going to be the largest one by far, so it is very probable that maybe I removed or skipped a little step I consider not that much important that maybe could help someone else. If so please let me know and I will try to review it, but probably the best way to go is searching on the internet as I did the first time I created this installer EXE file generation, because there is a lot information out there about this topic that can help you.
 
 WiX is by far the method I like the most to generate a Windows installer since generating it with the Visual Studio Installer projects extension lacks a lot of customizations that WiX doesn’t. Also is totally automatable and once you rule your process it is super easy to maintain it and rarely you will touch it again if it works as expected.
 
