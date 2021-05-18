@@ -6,10 +6,20 @@
     <description>Recent content on The imposter syndrome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.theimpostersyndrome.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>To SQL or to NoSQL?</title>
+      <link>https://www.theimpostersyndrome.dev/posts/to_sql_or_to_nosql/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.theimpostersyndrome.dev/posts/to_sql_or_to_nosql/</guid>
+      <description>To SQL or to NoSQL? Is that the real question? Nah, the real war out there is to agree on how to pronounce it. Do you pronounce it “Ess-cue-ell” or maybe you pronounce it “sequel” like Bill Gates among others? If you want to know how I pronounce it… I use both just to bother people.
+Jokes aside, let’s get on this post! Would you like to know the differences between these two database models?</description>
+    </item>
     
     <item>
       <title>Packaging adventures volume III: Wix</title>
