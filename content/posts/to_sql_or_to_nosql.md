@@ -36,8 +36,8 @@ The developer has the responsibility of relating data between collections so it 
 | :-------------                    | :----------:                               | :-----------:                                     |
 | **ACID Transactions**             |       Yes                                  |       Yes, but not intended for it                |
 | **BASE Transactions**             |       Yes, but not intended for it         |       Yes                                         |
-| **Fast reading**                  |       Yes                                  |       No                                          |
-| **Fast writing**                  |       No                                   |       Yes                                         |
+| **Fast reading**                  |       No                                   |       Yes                                         |
+| **Fast writing**                  |       Yes                                  |       No                                          |
 | **Scalability**                   |       Vertical                             |       Horizontal                                  |
 | **High performance**              |       No                                   |       Yes                                         |
 | **Integrity**                     |       Yes                                  |       No                                          |
