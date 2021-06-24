@@ -11,12 +11,28 @@ buttons:
 
 # your projects
 projects:
+  - name: Vikle
+    logo: images/skills/csharp.png
+    role: Developer
+    timeline: "Jan 2021"
+    repo: https://github.com/dfernandezramos/vikle
+    summary: Xamarin application for your car workshop appointments. Track the status of your reparation. Univertisty final project.
+    tags: ["academic"]
+
+  - name: Vikle MSA
+    logo: images/skills/csharp.png
+    role: Developer
+    timeline: "Jan 2021"
+    repo: https://github.com/dfernandezramos/VikleMSA
+    summary: Net Core microservices for Vikle deployable with Docker. Univertisty final project.
+    tags: ["academic"]
+
   - name: netcorems
     logo: images/skills/csharp.png
     role: Developer
     timeline: "Jul 2019"
     repo: https://github.com/dfernandezramos/netcorems
-    summary: net core microservices architecture proof of concept using RabbitMq as message broker and jwt as authentication.
+    summary: Net Core microservices architecture proof of concept using RabbitMq as message broker and jwt as authentication.
     tags: ["hobby", "academic"]
 
   - name: Kafka.POC
