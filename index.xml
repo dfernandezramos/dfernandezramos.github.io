@@ -6,10 +6,19 @@
     <description>Recent content on The imposter syndrome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.theimpostersyndrome.dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sherlock &#39;otool&#39; Holmes</title>
+      <link>https://www.theimpostersyndrome.dev/posts/solving_dynamic_linking_problems/</link>
+      <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.theimpostersyndrome.dev/posts/solving_dynamic_linking_problems/</guid>
+      <description>Have you ever had the feeling that something really magic has happened to your computer because of a thing that was working suddenly, out of nowhere, stopped working? Wait, maybe I made some changes, let’s go back to master&amp;hellip; mmh no&amp;hellip; it isn’t working anymore… but how? This code is working on other machines! It worked on mine like 20 minutes ago! This is impossible, nothing changed and it is not working anymore.</description>
+    </item>
     
     <item>
       <title>To SQL or to NoSQL?</title>
