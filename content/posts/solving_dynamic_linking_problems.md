@@ -7,9 +7,9 @@ categories:
 - Debugging
 ---
 
-Have you ever had the feeling that something really magic has happened to your computer because of a thing that was working suddenly, out of nowhere, stopped working? Wait, maybe I made some changes, let’s go back to master... mmh no... it isn’t working anymore… but how? This code is working on other machines! It worked on mine like 20 minutes ago! This is impossible, nothing changed and it is not working anymore. Well… maybe I performed a little change that is not related at all with this but... I just a couple of things through `brew`... Could that be the issue? IMPOSSIBLE!
+Have you ever had the feeling that something really magic has happened to your computer because of a thing that was working suddenly, out of nowhere, stopped working? Wait, maybe I made some changes, let’s go back to master... mmh no... it isn’t working anymore… but how? This code is working on other machines! It worked on mine like 20 minutes ago! This is impossible, nothing changed and it is not working anymore. Well… maybe I performed a little change that is not related at all with this but... I just installed/updated a couple of things through `brew`... Could that be the issue? IMPOSSIBLE!
 
-Well... impossible is nothing so let me relate how I spent a good afternoon to solve this little but disturbing issue!
+Well... impossible is nothing so let me relate how I spent a good afternoon solving this little but disturbing issue!
 
 <br />
 
