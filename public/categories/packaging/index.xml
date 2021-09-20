@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Packaging on The imposter syndrome</title>
+    <link>https://www.theimpostersyndrome.dev/categories/packaging/</link>
+    <description>Recent content in Packaging on The imposter syndrome</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.theimpostersyndrome.dev/categories/packaging/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Packaging adventures volume III: Wix</title>
+      <link>https://www.theimpostersyndrome.dev/posts/windowswixpackaging/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.theimpostersyndrome.dev/posts/windowswixpackaging/</guid>
+      <description>Third and final chapter of the packaging adventures. The previous post about Windows packaging was posted a couple of months ago and we learned how to create a simple Windows installer thanks to a Visual Studio extension. If you remember properly, there were some inconvenient like having two different installers (an MSI file for the app and an EXE file for the setup installer with the required extra components for our application).</description>
+    </item>
+    
+    <item>
+      <title>Packaging adventures volume II: Windows</title>
+      <link>https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/</link>
+      <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/</guid>
+      <description>So here we are with the second part of the packaging adventures. If you remember, we already talked about macOS packaging a few months ago and now it&amp;rsquo;s time to show you how to do it on Windows. Windows has many ways to package your applications and I am currently using another one for my production packages, but that will be explained in a third part of this packaging adventures. Let&amp;rsquo;s start with one of the most basic ways to achieve it.</description>
+    </item>
+    
+    <item>
+      <title>Packaging adventures volume I: macOS</title>
+      <link>https://www.theimpostersyndrome.dev/posts/macospackaging/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.theimpostersyndrome.dev/posts/macospackaging/</guid>
+      <description>If I had to define working (right) as a macOS developer out of the bounds of Xcode IDE with one expression I would do it as: &amp;ldquo;Oh, there is one more easy not easy thing Apple wants us to do to make it work properly&amp;rdquo;. Lately I&amp;rsquo;ve been working and struggling hard with packaging the multiplatform application I work on. When Apple released macOS Catalina they introduced a lot of security changes and a lot of applications suddenly stopped working turning App Store outsider developers lifes in a little nightmare.</description>
+    </item>
+    
+  </channel>
+</rss>

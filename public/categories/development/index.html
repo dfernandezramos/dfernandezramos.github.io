@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Development</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/svg" href="/assets/images/logo.svg" />
+    
+    <link rel="stylesheet" href="/assets/css/list.css">
+
+</head>
+
+<body>
+    <div class="container-fluid bg-dimmed wrapper">
+        
+        
+    <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.theimpostersyndrome.dev/">
+            <img src="/assets/images/logo.svg">The imposter syndrome</a>
+        <button class="navbar-toggler navbar-light" type="button" onclick="toggleSidebar()" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="top-nav-items">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+        
+        
+<div class="sidebar" id="sidebar">
+    <div class="sidebar-tree">
+      <input type="text" name="filtr-search" value="" placeholder="Search" data-search="" id="search-box" />
+      <ul class="tree" id="tree">
+        <li id="list-heading"><a href="#" data-filter="all">Development</a></li>
+        <div class="subtree">
+            
+
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="content container-fluid" id="content">
+    <div class="content-cards">
+      <div class="container-fluid filtr-container post-cards" id="post-cards">
+        
+          <div class="filtr-item" data-category='Development,Debugging'>
+  <a href="/posts/solving_dynamic_linking_problems/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/debugging.jpeg'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Sherlock &#39;otool&#39; Holmes</h5>
+        <p class="card-text post-summery">Have you ever had the feeling that something really magic has happened to your computer because of a thing that was working suddenly, out of nowhere, stopped working? Wait, maybe I made some changes, let’s go back to master&hellip; mmh no&hellip; it isn’t working anymore… but how? This code is working on other machines! It worked on mine like 20 minutes ago! This is impossible, nothing changed and it is not working anymore.</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">June 30, 2021</span>
+        <a
+        href="/posts/solving_dynamic_linking_problems/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category='Development,Database'>
+  <a href="/posts/to_sql_or_to_nosql/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/database.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">To SQL or to NoSQL?</h5>
+        <p class="card-text post-summery">To SQL or to NoSQL? Is that the real question? Nah, the real war out there is to agree on how to pronounce it. Do you pronounce it “Ess-cue-ell” or maybe you pronounce it “sequel” like Bill Gates among others? If you want to know how I pronounce it… I use both just to bother people.
+Jokes aside, let’s get on this post! Would you like to know the differences between these two database models?</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">May 18, 2021</span>
+        <a
+        href="/posts/to_sql_or_to_nosql/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category='Packaging,Windows'>
+  <a href="/posts/windowswixpackaging/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/wixpkg.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Packaging adventures volume III: Wix</h5>
+        <p class="card-text post-summery">Third and final chapter of the packaging adventures. The previous post about Windows packaging was posted a couple of months ago and we learned how to create a simple Windows installer thanks to a Visual Studio extension. If you remember properly, there were some inconvenient like having two different installers (an MSI file for the app and an EXE file for the setup installer with the required extra components for our application).</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">March 30, 2021</span>
+        <a
+        href="/posts/windowswixpackaging/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category='Development'>
+  <a href="/posts/developing_user_stories/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/miscommunication.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Developing user stories</h5>
+        <p class="card-text post-summery">Last week, in a little meeting we usually do to close our SCRUM Sprint period of two weeks, I was showing all the new features I had developed for our product. One of the features was not accepted and therefore its related user story was moved back from &ldquo;QA Review&rdquo; to &ldquo;On development&rdquo; again. I misunderstood my task.
+What can we do here? Should we just tell the developer what was wrong and wait for him to change it ASAP or maybe should we try to guess what led him to do it that way the first time to see if we have a problem in our product development workflow?</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">February 19, 2021</span>
+        <a
+        href="/posts/developing_user_stories/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category='Packaging,Windows'>
+  <a href="/posts/windowsuglypackaging/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/windowspkg.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Packaging adventures volume II: Windows</h5>
+        <p class="card-text post-summery">So here we are with the second part of the packaging adventures. If you remember, we already talked about macOS packaging a few months ago and now it&rsquo;s time to show you how to do it on Windows. Windows has many ways to package your applications and I am currently using another one for my production packages, but that will be explained in a third part of this packaging adventures. Let&rsquo;s start with one of the most basic ways to achieve it.</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">January 30, 2021</span>
+        <a
+        href="/posts/windowsuglypackaging/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category='DotNet,Development'>
+  <a href="/posts/core_vs_framework/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/ecosystem.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">.NET Framework vs .NET Core</h5>
+        <p class="card-text post-summery">First things first, I know I’ve been out for a couple of months without posting any article on my site. Sorry for that! I’ve been busy finishing up my computer science degree and I wanted to boost my final project by giving it my free time as much as possible. Thanks to that I have written down some Xamarin things to investigate and share them here, also. Now let’s get back to work!</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">December 28, 2020</span>
+        <a
+        href="/posts/core_vs_framework/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category='DotNet,Development'>
+  <a href="/posts/dotnetinabox/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/dotnet.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">.NET in a box</h5>
+        <p class="card-text post-summery">One of the most important things a .NET developer should know is what .NET is. It seems stupid but I know a lot of people that just starts coding and focusing in learning the .NET code they use. They can tell you why that .Count field is better than using the .Any () LINQ method to check for available values in your enumerator but they really don&rsquo;t know (and some of them sadly don&rsquo;t care) how their code is translated and optimized for a concrete processor in a concrete operating system.</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">September 3, 2020</span>
+        <a
+        href="/posts/dotnetinabox/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category='Packaging,macOS'>
+  <a href="/posts/macospackaging/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/awesomepkgmac.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Packaging adventures volume I: macOS</h5>
+        <p class="card-text post-summery">If I had to define working (right) as a macOS developer out of the bounds of Xcode IDE with one expression I would do it as: &ldquo;Oh, there is one more easy not easy thing Apple wants us to do to make it work properly&rdquo;. Lately I&rsquo;ve been working and struggling hard with packaging the multiplatform application I work on. When Apple released macOS Catalina they introduced a lot of security changes and a lot of applications suddenly stopped working turning App Store outsider developers lifes in a little nightmare.</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">August 20, 2020</span>
+        <a
+        href="/posts/macospackaging/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category='Development,writing-posts-category'>
+  <a href="/posts/git_survival_kit/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/git.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Git survival kit</h5>
+        <p class="card-text post-summery">When I first started in my current company I hadn&rsquo;t used any version control system so when I started using Git it was a little tricky. Lucky me I had one of the best developers I&rsquo;ve ever worked with, Víctor Guzmán. I remember he said something like: &ldquo;Ok, you can use a GUI for a bad Git usage or you can use the Terminal for learning real Git usage. I use Terminal so I won&rsquo;t help you with if you don&rsquo;t use it&rdquo;.</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">July 7, 2020</span>
+        <a
+        href="/posts/git_survival_kit/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+          <div class="filtr-item" data-category=''>
+  <a href="/posts/imposter/" class="post-card-link">
+    <div class="card">
+      <div class="card-head">
+        <img class="card-img-top" src='/images/posts/imposter.png'/>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">I&#39;m an imposter</h5>
+        <p class="card-text post-summery">I don&rsquo;t know how I got here. I know I did not do the best technical test my company gave to me because I know I left that two or three very important things I considere basic so my test was incomplete. The job interview was not bad at all but I feel that my interviewer has interviewed better developers than I. Maybe they were running out of time and they needed the first mid-decent developer they could find or maybe they had not enough money to hire that better developer that I was talking about.</p>
+      </div>
+      <div class="card-footer">
+        <span class="float-left">July 3, 2020</span>
+        <a
+        href="/posts/imposter/"
+        class="float-right btn btn-outline-info btn-sm"
+        >Read</a
+        >
+      </div>
+    </div>
+  </a>
+</div>
+
+        
+        
+      </div>
+      
+    </div>
+  </div>
+
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+        <div class="row text-left">
+            <div class="col-md-4 col-sm-12">
+                <h5>Navigation</h5>
+                
+                <ul>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#home">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#about">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#skills">Skills</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#experiences">Experiences</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#projects">Projects</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5>Contact Me</h5>
+                <ul>
+                    
+                    <li><span>Email: </span> <span>impostersyndrome.blog@gmail.com</span></li>
+                    
+                </ul>
+            </div>
+        </div>
+        </form>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-center icons">
+        <a class="py-2 px-2 d-none d-lg-inline-block" href="https://dfernandezramos.github.io/index.xml">RSS feed <i class="fas fa-rss fa-blue"></i></a>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-md-4">
+                <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+                    <img src="/assets/images/logo-inverted.png"> Toha
+                </a>
+            </div>
+            <div class="col-md-4">© 2020 Copyright.</div>
+            <div class="col-md-4">
+                Powered by <a href="https://gohugo.io/">Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+                <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/jquery.filterizr.min.js"></script>
+
+
+    
+    
+    <script src="/assets/js/list.js"></script>
+
+</body>
+
+</html>

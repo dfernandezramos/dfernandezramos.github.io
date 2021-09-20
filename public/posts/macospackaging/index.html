@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Packaging adventures volume I: macOS</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/svg" href="/assets/images/logo.svg" />
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+<link rel="stylesheet" href="/assets/css/single.css" /> 
+</head>
+
+<body>
+    <div class="container-fluid bg-dimmed wrapper">
+        
+         <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.theimpostersyndrome.dev/">
+            <img src="/assets/images/logo.svg">The imposter syndrome</a>
+        <button class="navbar-toggler navbar-light" type="button" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="top-nav-items">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+            </ul>
+        </div>
+    </div>
+</nav> 
+
+        
+        
+<div class="container p-0 read-area">
+    
+    <div class="hero-area col-sm-12" style='background-image: url(/images/posts/awesomepkgmac.png);'>
+    </div>
+
+    
+    <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+            <img class="rounded-circle" src='/images/avatar.png' />
+            <h5 class="author-name">David Fernández</h5>
+            <p>August 20, 2020</p>
+        </div>
+
+        <div class="title">
+            <h1>Packaging adventures volume I: macOS</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+            <p>If I had to define working (right) as a macOS developer out of the bounds of Xcode IDE with one expression I would do it as: &ldquo;Oh, there is one more easy not easy thing Apple wants us to do to make it work properly&rdquo;. Lately I&rsquo;ve been working and struggling hard with packaging the multiplatform application I work on. When Apple released macOS Catalina they introduced a lot of security changes and a lot of applications suddenly stopped working turning App Store outsider developers lifes in a little nightmare.</p>
+<p>In our case the problem was that our application uses the webcam and as a user you need to grant permissions, but for that you need to define why you application needs permissions in the <code>Info.plist</code> file, but for Catalina to relate the reason you defined for using the camera with your application you can not use a script that calls the <code>.exe</code> file as main executable file (which was our case), but for that you need a bundle file, but for that&hellip; That is the reason I&rsquo;m constantly saying &ldquo;Oh, there is one more easy not easy thing,&hellip;&rdquo;, because it seems like a grave you never quit digging.</p>
+<p>During this long trip properly packaging our application I&rsquo;ve been taking notes to somehow document it. Enjoy:</p>
+<hr>
+<h4 id="directories-arrangement">Directories arrangement:</h4>
+<p><strong><code>Note: I am going to document how I packaged MY APPLICATION so maybe you will need to perform extra steps or change some things in order to fit this tutorial to your needs. Also, for this example I am going to call &quot;MyApplication&quot; the application we are packaging.</code></strong></p>
+<p>First of all we need to create a root directory called <code>MyApplication.app</code> and inside the of it you need to create another directory called <code>Contents</code>. Inside of <code>Contents</code> we need to create:</p>
+<ul>
+<li>The <code>MacOS</code> directory where the application bundle will go in.</li>
+<li>The <code>Info.plist</code> file where the application info will go in. <a href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Introduction/Introduction.html">More info here</a>.</li>
+<li>The <code>Resources</code> directory where the application icon file and our developer public key will go in.</li>
+<li>The <code>Frameworks</code>directory where we will place some <code>dylib's, dll's and third party FrameWorks</code> our application will use.</li>
+</ul>
+<p>For further information about where to place each file our application uses, visit the <a href="https://developer.apple.com/library/archive/technotes/tn2206/_index.html#//apple_ref/doc/uid/DTS40007919-CH1-TNTAG201">nested code section</a> in the code signing in depth Apple documentation.</p>
+<h4 id="granting-permissions-to-the-application">Granting permissions to the application:</h4>
+<p>In this point remains our main reason for why we needed to perform a whole new process for creating a bundle and installer properly. We use Visual Studio for Mac and when you build your project, the IDE generates a <code>MyApplication.exe</code> file that you can simly run with <code>mono MyApplication.exe</code>. And that&rsquo;s what we were doing for a lot of years using a script into the mentioned <code>MacOS</code> that was running that command besides setting up some environment variables for a proper execution.</p>
+<p>Doing that is just fine if you do not use something that Apple wants the user to grant permissions for (i.e.: full disk access, camera or microphone usage, etc.). But if your application needs permissions for something you will need to add a description message to display it to the user when asking for them in the <code>Info.plist</code> file. In our case it was:</p>
+<blockquote>
+<p><code>&lt;key&gt;NSCameraUsageDescription&lt;/key&gt;</code><br />
+<code>&lt;string&gt;MyApplication needs to look at your pretty face using the camera.&lt;/string&gt;</code><br />
+<code>&lt;key&gt;NSDesktopFolderUsageDescription&lt;/key&gt;</code><br />
+<code>&lt;string&gt;MyApplication wants to look for candy into your desktop folder.&lt;/string&gt;</code></p>
+</blockquote>
+<p>Between the key value pairs in the <code>Info.plist</code> file you also need to specify the <a href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html">CFBundleExecutable</a> to identify the name of the bundle&rsquo;s main executable file. What is the problem at this point? Easy: the <code>Info.plist</code> file is for the script that executes the <code>MyApplication.exe</code> file but not for the exe file per se, so when the application tries to acces the camera or the desktop directory macOS Catalina kills the execution with no information (unless you have a little knowledge reading the Console.app logs). No <code>Info.plist</code> file with permission description, no party. <em>Please, if you have any other way to keep using the script and the <code>.exe</code> file don&rsquo;t hesitate to comment down below</em></p>
+<p>Another thing we noticed using the upcoming macOS Big Sur beta operative system is that your application will have the same crash if it does not have also the proper <a href="https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_device_camera">Entitlements</a> set up. We will tell you how to add them in the <code>code signing</code> step. In our case we created an <code>Entitlements.plist</code> file and we added:</p>
+<blockquote>
+<p><code>&lt;key&gt;com.apple.security.device.camera&lt;/key&gt;</code><br />
+<code>&lt;true/&gt;</code></p>
+</blockquote>
+<h4 id="bundle-creation">Bundle creation:</h4>
+<p>In order to stop using a script for executing the <code>MyApplication.exe</code> file we need a bundle file generated by mono and place it in the <code>MacOS</code> folder inside our application. For that we used the next command:</p>
+<blockquote>
+<p><code>mkbundle &lt;PROJECT_OUTPUT_BIN_DIR&gt;/MyApplication.exe -o &lt;PROJECT_OUTPUT_BIN_DIR&gt;/MyApplication --runtime &lt;MONO_PATH&gt;/bin/mono-sgen64 --simple</code></p>
+</blockquote>
+<p>In our case we needed to add some extra things like setting up the <code>$PKG_CONFIG_PATH</code> environment variable with the <code>&lt;MONO_PATH&gt;/lib/pkgconfig</code> before running the <code>mkbundle</code> command. We also added the:</p>
+<ul>
+<li><code>-L &lt;LIBRARY_PATH&gt;</code> command option to also bundle project libraries Visual Studio generates at the build output, the mono 4.5 libraries and Facades libraries.</li>
+<li><code>--machine-config</code> command option for for specifying the mono 4.5 <code>machine.config</code> file as machine configuration.</li>
+<li><code>--config &lt;CONFIGURATION_FILE_PATH&gt;</code> command option for adding a dll map config file our application needs.</li>
+<li><code>--deps</code> command option to automatically include all the dependencies referenced by our application.</li>
+</ul>
+<p>For further information visit the <a href="https://www.mono-project.com/docs/tools+libraries/tools/mkbundle/">mkbundle command documentation</a> or use the man command.</p>
+<p>Make sure the generated bundle runs your application and try out double clicking the <code>MyApplication.app</code> directory we created at the beginning of this post (remember to set <code>MyApplication</code> as value to the <code>CFBundleExecutable</code> key in the <code>Info.plist</code> file).</p>
+<h4 id="code-signing-for-apple-notarization">Code signing for Apple notarization:</h4>
+<p><strong><code>NOTE: there is currently an issue with Mono that prevents code signing bundles in macOS. Once the bundle is signed it turns unusable.</code> <a href="https://github.com/mono/mono/pull/19580">Checkout this link for further information</a><code>.</code></strong></p>
+<p>Here we are facing another easy not easy thing Apple wants you to perform if you do not want 20 messages per day in your support portal inbox asking why your installer pops up a message saying your application might be malware, only letting you install it by right clicking it and selecting the &ldquo;Open&rdquo; option: Apple Notarization (which requires most of your libraries and binaries to be signed). In order to not codesign every single file in your application I recommend you to first create a package and perform a first notarization in order to know which files need to be signed and which ones not.</p>
+<p>Once you know which files you need to sign you will need to create a &ldquo;Developer ID Application&rdquo; certificate and use it with the <code>codesign</code> command for signing everything Apple asks for. For further information visit the <a href="https://www.manpagez.com/man/1/codesign/">codesign command man page</a>. I basically use this command to sign each file:</p>
+<blockquote>
+<p><code>codesign --timestamp --deep --keychain /Users/$(USER)/Library/Keychains/login.keychain --sign &quot;Developer ID Application: David Fernandez (93H7PWN2SA)&quot; &lt;FILE_PATH&gt;</code></p>
+</blockquote>
+<p>As a last step we codesign the entire <code>MyApplication.app</code> directory with the next command (remember the <code>Entitlements.plist</code> file we mentioned before? Here is were it comes into play):</p>
+<blockquote>
+<p><code>codesign --timestamp --deep --entitlements Entitlements.plist --keychain /Users/$(USER)/Library/Keychains/login.keychain --sign &quot;Developer ID Application: David Fernandez (93H7PWN2SA)&quot; MyApplication.app -f -o runtime</code></p>
+</blockquote>
+<h4 id="installer-creation">Installer creation:</h4>
+<p>Let&rsquo;s create a temporal installer for our application into an output path we are going to call <code>&lt;RESOURCES_PATH&gt;</code>. In our case we also want the installer to perform some things before starting and after finishing and for that we will have a path with a <code>preinstall</code> and <code>postinstall</code> bash scripts we are going to place in a dedicated directory. For that we are going to run the next command:</p>
+<blockquote>
+<p><code>pkgbuild --identifier 'com.myapplication.x86_64.dfernandez' --root MyApplication.app --version &lt;VERSION&gt; --scripts &lt;PRE_AND_POST_INSTALL_SCRIPTS_PATH&gt; --install-location '/Applications' &lt;RESOURCES_PATH&gt;/MyApplication.pkg</code></p>
+</blockquote>
+<p>This command will create a <code>.pkg</code> file into the <code>&lt;RESOURCES_PATH&gt;</code> directory where we are also going to place (in case we want) other resources our installer will install (let&rsquo;s say a license manager application called <code>MyLicenseManager.pkg</code>) and other resources like the terms and conditions text file, a background image for the installer, etc. We also need a <code>Distribution.xml</code> file where we are going to define some installer parameters and what <code>.pkg</code> files we are going to ask it to install (<a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Reference/DistributionDefinitionRef/Chapters/Introduction.html">check this link for more information</a>). It is important the output path of the next command is not the same as <code>&lt;RESOURCES_PATH&gt;</code>:</p>
+<blockquote>
+<p><code>productbuild --distribution &lt;DISTRIBUTION_FILE_PATH&gt; &lt;OUTPUT_PATH&gt;/MyApplication.pkg --package-path &lt;RESOURCES_PATH&gt;</code></p>
+</blockquote>
+<p>If you wonder how our distribution file would look like here you have it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+<span style="color:#f92672">&lt;installer-gui-script</span> <span style="color:#a6e22e">minSpecVesion=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">&lt;options</span> <span style="color:#a6e22e">require-scripts=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;background</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/background.png&#34;</span> <span style="color:#a6e22e">scaling=</span><span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#a6e22e">mime-type=</span><span style="color:#e6db74">&#34;image/png&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;background-darkAqua</span>  <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/background.png&#34;</span> <span style="color:#a6e22e">scaling=</span><span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#a6e22e">mime-type=</span><span style="color:#e6db74">&#34;image/png&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;license</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/license.txt&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;domains</span> <span style="color:#a6e22e">enable_anywhere=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enable_currentUserHome=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enable_localSystem=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;title&gt;</span>My Application<span style="color:#f92672">&lt;/title&gt;</span>
+  <span style="color:#f92672">&lt;choices-outline&gt;</span>
+    <span style="color:#f92672">&lt;line</span> <span style="color:#a6e22e">choice=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/choices-outline&gt;</span>
+  <span style="color:#f92672">&lt;choice</span> <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;default&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span> <span style="color:#a6e22e">start_enabled=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">&gt;</span>
+    <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.mylicensemanager.thirdpartycompanyname.driver&#34;</span><span style="color:#f92672">/&gt;</span>
+    <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span><span style="color:#f92672">/&gt;</span>
+  <span style="color:#f92672">&lt;/choice&gt;</span>
+  <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span><span style="color:#f92672">&gt;</span>[RESOURCES_PATH]/MyApplication.pkg<span style="color:#f92672">&lt;/pkg-ref&gt;</span>
+  <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.mylicensemanager.thirdpartycompanyname.driver&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;6.40&#34;</span><span style="color:#f92672">&gt;</span>[RESOURCES_PATH]/MyLicenseManager.pkg<span style="color:#f92672">&lt;/pkg-ref&gt;</span>
+<span style="color:#f92672">&lt;/installer-gui-script&gt;</span>
+</code></pre></div><p>With all these things we have generated a final <code>.pkg</code> file with a custom installer and we have added the extra <code>MyLicenseManager</code> software to be also installed with it. Now we need to sign our package and for that we need to have a &ldquo;Developer ID Installer&rdquo; certificate in our keychain. First we need to  unlock it:</p>
+<blockquote>
+<p><code>security unlock-keychain -p &lt;USERNAME&gt; /Users/&lt;USERNAME&gt;/Library/Keychains/login.keychain</code></p>
+</blockquote>
+<p>Then we sign it with the next command:</p>
+<blockquote>
+<p><code>productsign --keychain /Users/&lt;USERNAME&gt;/Library/Keychains/login.keychain --sign &quot;Developer ID Installer: David Fernandez (93H7PWN2SA)&quot; MyApplication.pkg MyApplication-signed.pkg</code></p>
+</blockquote>
+<h4 id="package-notarization">Package notarization:</h4>
+<p>In order to let Apple check if your application is trustable by the OS, you need to perform what they call a <a href="https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution">notarization</a>. For that please follow these steps:</p>
+<ol>
+<li>Run the <code>xcrun altool --notarize-app ...</code> command to send your application installer to Apple for notarization. <a href="https://developer.apple.com/documentation/xcode/notarizing_macos_software_before_distribution/customizing_the_notarization_workflow#3087734">Please read this</a> in order to know how to use this command. If everything goes well it will give you a request UUID. <em>Keep in mind that you need to complete the <strong>Installer creation</strong> step first in order to have an installer to send it to Apple</em></li>
+<li>Run the <code>xcrun altool --notarization-info &lt;REQUEST_UUID&gt; -u &lt;APPSTORE_CONNECT_USER&gt; -p &lt;APPSTORE_CONNECT_PASSWORD&gt;</code> command with the provided request UUID to check the status of the notarization. Once finished it will provide you a link with the results.</li>
+<li>Check the link provided and perform a <code>codesign</code> for every file they ask you to sign.</li>
+<li>If the notarization is successful, run the <code>xcrun stapler staple MyApplication-Installer.pkg</code> command to staple the result to your installer file.</li>
+<li>Distribute your application!</li>
+</ol>
+<hr>
+<p><br /></p>
+<p>I really hope this can help you if you are currently facing one or more of the problems I&rsquo;ve faced with. If you have better ways to solve some situations or extra steps that would be useful please write them down and I will complete this guide and also apply them for my automated process. I also have documented the packaging adventures volume II in Windows and I will post it in the future (besides it is quite easier than macOS).</p>
+<p>See you all in the next post!</p>
+
+        </div>
+
+        
+        <hr />
+        <div class="row next-prev-navigator">
+                   
+            <div class="col-md-6 previous-article">
+                <a href="/posts/dotnetinabox/" class="btn btn-outline-info">
+                    <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+                    <br />
+                    <span>.NET in a box</span>
+                </a>
+            </div>
+             
+            <div class="col-md-6 next-article">
+                <a href="/posts/git_survival_kit/" class="btn btn-outline-info">
+                    <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+                    <br />
+                    <span>Git survival kit</span>
+                </a>
+            </div>
+                            
+        </div>
+        <hr />
+        
+         <div id="disqus_thread"></div>
+<script>
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    (function() { 
+        var d = document,
+            s = d.createElement('script');
+        d.type = "text/javascript";
+        d.async = true;
+        s.src = 'https://thesyndromeimposter.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+    </div>
+    
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+        <div class="row text-left">
+            <div class="col-md-4 col-sm-12">
+                <h5>Navigation</h5>
+                
+                <ul>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#home">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#about">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#skills">Skills</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#experiences">Experiences</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#projects">Projects</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5>Contact Me</h5>
+                <ul>
+                    
+                    <li><span>Email: </span> <span>impostersyndrome.blog@gmail.com</span></li>
+                    
+                </ul>
+            </div>
+        </div>
+        </form>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-center icons">
+        <a class="py-2 px-2 d-none d-lg-inline-block" href="https://dfernandezramos.github.io/index.xml">RSS feed <i class="fas fa-rss fa-blue"></i></a>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-md-4">
+                <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+                    <img src="/assets/images/logo-inverted.png"> Toha
+                </a>
+            </div>
+            <div class="col-md-4">© 2020 Copyright.</div>
+            <div class="col-md-4">
+                Powered by <a href="https://gohugo.io/">Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+                <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/jquery-3.4.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/jquery.filterizr.min.js"></script>
+
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script src="/assets/js/single.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+     
+</body>
+
+</html>
