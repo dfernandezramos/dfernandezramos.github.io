@@ -177,7 +177,7 @@ i.e.: Imagine you have 2 commits:
 Then your reviewer ask to not print "Hello world" but "Good morning Vietnam!", so you create a fixup commit as described. Then 'n' in the interactive rebase should be 3 because we whant to rebase 3 commits (`git rebase -i HEAD~3`) and it should look like this:
 
 > pick d747d49f2 Print Hello world.<br />
-> fixup pick 6g84etd6e fixup! Print Hello world.<br />
+> fixup 6g84etd6e fixup! Print Hello world.<br />
 > pick 6f39ac83b Close app when pressing ESC key.
 
 Save the edition and the rebase will be produced. Also in this case since the message is no more "Hello World" we would like to rename the commit message, so in the interactive rebase we also could have changed the word `pick` by the letter `r` for `r`ename the message:
