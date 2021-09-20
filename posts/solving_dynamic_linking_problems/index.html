@@ -74,7 +74,7 @@
 <p>The first thing that comes to my mind is to use the <code>otool</code> command to check the dependencies of each library, but there are other libraries that are loaded in runtime through <code>dllimport</code> so running the app through console using <code>MONO_LOG_LEVEL=debug</code> and using <code>grep</code> to filter the output to print all the text that contains <code>DllImport loaded library</code>. Bingo:</p>
 <p><code>Mono: DllImport loaded library ‘/Library/Frameworks/Mono.framework/Libraries/libgtk-quartz-2.0.0.dylib’’.</code></p>
 <p>I know that <code>libgtk-quartz-2.0.0.dylib</code> should be copied from a Nuget package to the output directory and be loaded from there on runtime. Now it’s time to guess why it is failing loading the library from there in the first instance. For that I will just run again the application with the <code>MONO_LOG_LEVEL=debug</code> and print all the output looking for <code>libgtk-quartz</code>:</p>
-<pre><code>Mono: DllImport error loading library '/Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib': 'dlopen(/Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib, 9): Library not loaded: @rpath/libpangocairo-1.0.0.dylib
+<pre tabindex="0"><code>Mono: DllImport error loading library '/Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib': 'dlopen(/Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib, 9): Library not loaded: @rpath/libpangocairo-1.0.0.dylib
  Referenced from: /Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib
  Reason: Incompatible library version: libgtk-quartz-2.0.0.dylib requires version 4204.0.0 or later, but libpangocairo-1.0.0.dylib provides version 3501.0.0'.
 </code></pre><p>We are in the good way to solve the issue.</p>
@@ -82,7 +82,7 @@
 <p>So, it turns out that our <code>libgtk-quartz</code> library needs <code>libpangocairo-1.0.0.dylib</code> version 4204 or higher, but the one that is loaded has the 3501 version.</p>
 <p><code>otool -L</code> tells me that the <code>libpangocairo-1.0.0.dylib</code> located in my output directory has the correct version: 4204, so that library is being loaded from another path. The same library on the Mono installation path has the 3501 version. Also, the <code>libgtk-quartz</code> ends up being loaded from the Mono installation path. Same for all the GTK libraries. But why? We are closer to the issue.</p>
 <p>My application uses a GTK nuget package that I compile and upload to my own server, so I would like to check if the dynamic linking of my GTK libraries is working properly. For that I will first check the dynamic dependencies of <code>libgtk-quartz</code>, which is the library we started investigating this issue with, but it could work with any other GTK library:</p>
-<pre><code>$ otool -L /Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib
+<pre tabindex="0"><code>$ otool -L /Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib
 /Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib:
 	/opt/gtk-sharp-nuget/dist/darwin_x86_64/lib/libgtk-quartz-2.0.0.dylib (compatibility version 2401.0.0, current version 2401.32.0)
 	@rpath/libpangocairo-1.0.0.dylib (compatibility version 4204.0.0, current version 3501.0.0)
@@ -90,7 +90,7 @@
 ..
 .
 </code></pre><p>Now I will check if the @rpath is being replaced for the correct values using <code>otool -l</code> over the <code>libgtk-quartz</code> library:</p>
-<pre><code>Load command 43
+<pre tabindex="0"><code>Load command 43
      cmd LC_DATA_IN_CODE
  cmdsize 16
  dataoff 3828808
@@ -116,7 +116,7 @@ Load command 48
      cmdsize 40
         path @executable_path/../lib (offset 12)
 </code></pre><p>Everything seems fine, we have 5 different <code>LC_RPATH</code> to replace <code>@rpath</code> for, but let’s debug again our application printing a line each time dyld expands an <code>@rpath</code> variable saying if it was successful or not. For that we will set the <code>DYLD_PRINT_RPATHS</code> environment variable before running our application again through the terminal. Let’s see what we got now:</p>
-<pre><code>Mono: DllImport attempting to load: 'libgtk-quartz-2.0.0.dylib'.
+<pre tabindex="0"><code>Mono: DllImport attempting to load: 'libgtk-quartz-2.0.0.dylib'.
 RPATH failed expanding     @rpath/libpangocairo-1.0.0.dylib to: /Users/dfernandez/Development/MyApp/src/libpangocairo-1.0.0.dylib
 RPATH failed expanding     @rpath/libpangocairo-1.0.0.dylib to: /Users/dfernandez/Development/MyApp/src/SampleApp/SampleAppDemo.GTK/bin/Debug/../libpangocairo-1.0.0.dylib
 RPATH failed expanding     @rpath/libpangocairo-1.0.0.dylib to: /Library/Frameworks/Mono.framework/Versions/6.12.0/bin/../libpangocairo-1.0.0.dylib

@@ -6,11 +6,7 @@
     <description>Recent content in writing-posts-category on The imposter syndrome</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.theimpostersyndrome.dev/categories/writing-posts-category/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.theimpostersyndrome.dev/categories/writing-posts-category/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git survival kit</title>
       <link>https://www.theimpostersyndrome.dev/posts/git_survival_kit/</link>
