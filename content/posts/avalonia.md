@@ -165,4 +165,4 @@ So basically that’s it. I been working with Avalonia for a couple of months no
 ---
 <br />
 
-What’s next? Well, one of those good things I told you that happened to me is that I am getting married next year, so I am planning to develop a webpage for all my wedding day related stuff. I want to use tools I’ve never or barely touched and I have seen one video tutorial from one of my favourite content creators [Takuya (devaslife)](https://www.youtube.com/c/devaslife) using Next.js, Three.js and Chakra UI. So... as always, if yoy have something to ask or comment just write it down below. See you in the next post!
+What’s next? Well, one of those good things I told you that happened to me is that I am getting married next year, so I am planning to develop a webpage for all my wedding day related stuff. I want to use tools I’ve never or barely touched and I have seen one video tutorial from one of my favourite content creators [Takuya (devaslife)](https://www.youtube.com/c/devaslife) using Next.js, Three.js and Chakra UI. So... as always, if you have something to ask or comment just write it down below. See you in the next post!
