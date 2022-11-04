@@ -72,7 +72,7 @@
 <blockquote>
 <p><code>git commit --amend --reset-author</code> -&raquo; Reset the author we have just edited to work with.</p>
 </blockquote>
-<p><br /></p>
+<br />
 <h4 id="basic-git-commands">Basic Git commands:</h4>
 <blockquote>
 <p><code>git status</code> -&raquo; Info about the current repository status (you have to stay inside a path initialized as a Git repository).</p>
@@ -101,7 +101,7 @@
 <blockquote>
 <p><code>git add -p</code> -&raquo; Shows change by change giving the option to accept them or not.</p>
 </blockquote>
-<p><br /></p>
+<br />
 <h4 id="git-branching-commands">Git branching commands:</h4>
 <blockquote>
 <p><code>git branch</code> -&raquo; Lists all local branches.</p>
@@ -127,7 +127,7 @@
 <blockquote>
 <p><code>git cherry &lt;BRANCH_NAME&gt; -v</code> -&raquo; Shows the commits from the current branch that the specified one does not have witn the <code>+</code> symbol and shows the ones that already have with the <code>-</code> symbol.</p>
 </blockquote>
-<p><br /></p>
+<br />
 <h4 id="gettingpushing-recent-changes">Getting/Pushing recent changes:</h4>
 <blockquote>
 <p><code>git pull</code> -&raquo; Gets the repository changes of all branches and applies the new changes of the current branch on it.</p>
@@ -141,7 +141,7 @@
 <blockquote>
 <p><code>git push origin &lt;BRANCH_NAME&gt; -f</code> -&raquo; Forces a push of the current branch status to the repository. All changes in the repository that we do not have will be overriden.</p>
 </blockquote>
-<p><br /></p>
+<br />
 <h4 id="git-commits-and-logs">Git commits and logs:</h4>
 <blockquote>
 <p><code>git commit</code> -&raquo; Creates a commit with the current accepted changes. This will prompt the user with an editor to ask for a commit message.</p>
@@ -167,9 +167,9 @@
 <blockquote>
 <p><code>git cherry-pick &lt;COMMIT_HASH&gt;</code> -&raquo; Copy the specified commit from another branch into the current branch.</p>
 </blockquote>
-<p><br /></p>
+<br />
 <h4 id="different-situations-and-how-to-face-them">Different situations and how to face them:</h4>
-<p><br /></p>
+<br />
 <h5 id="i-have-done-a-rebase-against-another-branch-and-now-i-have-conflicts">I have done a rebase against another branch and now I have conflicts:</h5>
 <ul>
 <li><code>git status</code> -&raquo; To see the files where I have conflicts.</li>
@@ -177,7 +177,7 @@
 <li><code>git add &lt;PATH&gt;</code> -&raquo; Add the files you have just solved the conflicts in.</li>
 <li><code>git rebase --continue</code> -&raquo; To continue the rebase process once all current conflicts are solved.</li>
 </ul>
-<p><br /></p>
+<br />
 <h5 id="i-have-pushed-a-commit-in-a-branch-but-i-want-to-revert-it">I have PUSHED a commit in a branch but I want to revert it:</h5>
 <p>There are two ways for solving this situation:</p>
 <blockquote>
@@ -203,7 +203,7 @@
 </ul>
 </blockquote>
 </blockquote>
-<p><br /></p>
+<br />
 <h5 id="i-have-done-recent-changes-that-can-fit-in-my-previous-commit">I have done recent changes that can fit in my previous commit:</h5>
 <p>Instead of <code>git reset HEAD~1</code> and commit again, you can do something easier:</p>
 <blockquote>
@@ -212,7 +212,7 @@
 <li><code>git commit --amend</code> -&raquo; Commit those changes in the previous commit. If you have already pushed this commit you will need to force a push (but keep in mind the previous situation!).</li>
 </ul>
 </blockquote>
-<p><br /></p>
+<br />
 <h5 id="save-uncommited-changes-for-later">Save uncommited changes for later:</h5>
 <p>If you need to perform any action that you can not do because you have &ldquo;uncommited changes&rdquo; you can save them for later as a CUT/PASTE in the clipboard of your computer.</p>
 <blockquote>
@@ -221,7 +221,7 @@
 <blockquote>
 <p><code>git stash pop</code> -&raquo; All saved changes are delivered to the current branch as uncommited changes again. (PASTE)</p>
 </blockquote>
-<p><br /></p>
+<br />
 <h5 id="i-have-done-a-very-big-commit-that-i-want-to-split-in-different-commits">I have done a very big commit that I want to split in different commits:</h5>
 <blockquote>
 <ul>
@@ -233,7 +233,7 @@
 <ul>
 <li>Repeat the add + commit process as times as needed.</li>
 </ul>
-<p><br /></p>
+<br />
 <h5 id="i-have-to-apply-changes-on-a-pull-request-someone-else-has-reviewed">I have to apply changes on a pull request someone else has reviewed:</h5>
 <p>When you are applying requested changes on a pull request you will need to create new commits to make it easier to review for your reviewer. For that, follow this:</p>
 <blockquote>
@@ -246,7 +246,7 @@
 <p>Repeat the process for each commit to be fixed. Once reviewed you won&rsquo;t fixup commits on the destination branch so you will need to to the next:</p>
 <blockquote>
 <ul>
-<li><code>git rebase -i HEAD~n</code> -&raquo; Where &lsquo;n&rsquo; is the number of commits to work with.</li>
+<li><code>git rebase -i HEAD~n</code> -&raquo; Where &rsquo;n&rsquo; is the number of commits to work with.</li>
 <li>In my case VIM editor is opened and it puts the fixup commits in the proper place. But if not you just need to put each fixup commit just after the original commit.</li>
 <li><code>git push -f</code> -&raquo; Force a push to your branch in the repo.</li>
 </ul>
@@ -256,7 +256,7 @@
 <p>pick d747d49f2 Print Hello world.<br />
 pick 6f39ac83b Close app when pressing ESC key.</p>
 </blockquote>
-<p>Then your reviewer ask to not print &ldquo;Hello world&rdquo; but &ldquo;Good morning Vietnam!&rdquo;, so you create a fixup commit as described. Then &lsquo;n&rsquo; in the interactive rebase should be 3 because we whant to rebase 3 commits (<code>git rebase -i HEAD~3</code>) and it should look like this:</p>
+<p>Then your reviewer ask to not print &ldquo;Hello world&rdquo; but &ldquo;Good morning Vietnam!&rdquo;, so you create a fixup commit as described. Then &rsquo;n&rsquo; in the interactive rebase should be 3 because we whant to rebase 3 commits (<code>git rebase -i HEAD~3</code>) and it should look like this:</p>
 <blockquote>
 <p>pick d747d49f2 Print Hello world.<br />
 fixup 6g84etd6e fixup! Print Hello world.<br />
@@ -269,7 +269,7 @@ pick 6f39ac83b Close app when pressing ESC key.</p>
 <p>Once saved the edition the terminal will prompt with a new editor to edit the commit message. Save it and the rebase process will be the same as described before but changing the desired commit message!</p>
 <hr>
 <hr>
-<p><br /></p>
+<br />
 <p>I hope you can find something useful in these Git commands. I have more commands and situations like working with submodules but I think that all this information I have provided should be enough to work with Git normally. Please don&rsquo;t hesitate to comment anything in the comment section if you need something else.</p>
 <p>See you all in the next post!</p>
 
