@@ -1,12 +1,16 @@
 # Your experiences
 experiences:
-  - designation: C# Senior Software Engineer
+  - designation: C# Senior Software Engineer (Dev lead)
     company:
       name: Fluendo S.A.
       url: "https://fluendo.com/"
       location: Barcelona
       overview: Multimedia software developer on C# applications for Windows, macOS, iOS and Android.
     start: Jun 2019
+    responsibilities:
+      - Avalonia UI and Xamarin Forms
+      - Cairo and Skia 2D graphics libraries
+      - Manage IT and development teams
 
   - designation: C# Junior Software Engineer
     company:

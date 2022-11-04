@@ -5,6 +5,10 @@ skills:
   icon: "images/skills/csharp.png"
   summary: "Experience developing desktop and mobile multiplatform applications. Main backend developing language. Capable of testing and clean coding any program."
 
+- name: Avalonia UI
+  icon: "images/skills/avalonia.png"
+  summary: "Using as main frontend language for desktop professional development. Capable of designing user friendly good looking views."
+
 - name: GTK+
   icon: "images/skills/gtk.png"
   summary: "Using as main frontend language for desktop professional development. Capable of designing user friendly good looking views."
@@ -12,6 +16,14 @@ skills:
 - name: Xamarin
   icon: "images/skills/xamarin.png"
   summary: "Using as main frontend language for mobile professional and recreative development. Microsoft Xamarin professional developer certified."
+
+- name: Skia 2D Graphics library
+  icon: "images/skills/skia.png"
+  summary: "Professional experience designing 2D drawings for desktop and mobile apps with SkiaSharp"
+
+- name: Cairo 2D Graphics library
+  icon: "images/skills/cairo.png"
+  summary: "Professional experience designing 2D drawings for desktop apps with Cairo"
 
 - name: API REST
   icon: "images/skills/cloud.png"
