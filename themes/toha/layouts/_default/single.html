@@ -45,7 +45,7 @@
         </div>
         <hr />
         <!-- Add Disqus forum  -->
-        {{ if .Site.DisqusShortname }} {{ partial "disqus.html" . }} {{ end }}
+        {{ if site.Config.Services.Disqus.Shortname }} {{ partial "disqus.html" . }} {{ end }}
     </div>
     {{ end }} {{ define "scripts" }}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
