@@ -126,25 +126,25 @@
 <p><code>productbuild --distribution &lt;DISTRIBUTION_FILE_PATH&gt; &lt;OUTPUT_PATH&gt;/MyApplication.pkg --package-path &lt;RESOURCES_PATH&gt;</code></p>
 </blockquote>
 <p>If you wonder how our distribution file would look like here you have it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-XML" data-lang="XML"><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
-<span style="color:#f92672">&lt;installer-gui-script</span> <span style="color:#a6e22e">minSpecVesion=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
-  <span style="color:#f92672">&lt;options</span> <span style="color:#a6e22e">require-scripts=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;background</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/background.png&#34;</span> <span style="color:#a6e22e">scaling=</span><span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#a6e22e">mime-type=</span><span style="color:#e6db74">&#34;image/png&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;background-darkAqua</span>  <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/background.png&#34;</span> <span style="color:#a6e22e">scaling=</span><span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#a6e22e">mime-type=</span><span style="color:#e6db74">&#34;image/png&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;license</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/license.txt&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;domains</span> <span style="color:#a6e22e">enable_anywhere=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enable_currentUserHome=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enable_localSystem=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;title&gt;</span>My Application<span style="color:#f92672">&lt;/title&gt;</span>
-  <span style="color:#f92672">&lt;choices-outline&gt;</span>
-    <span style="color:#f92672">&lt;line</span> <span style="color:#a6e22e">choice=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;/choices-outline&gt;</span>
-  <span style="color:#f92672">&lt;choice</span> <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;default&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span> <span style="color:#a6e22e">start_enabled=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.mylicensemanager.thirdpartycompanyname.driver&#34;</span><span style="color:#f92672">/&gt;</span>
-    <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span><span style="color:#f92672">/&gt;</span>
-  <span style="color:#f92672">&lt;/choice&gt;</span>
-  <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span><span style="color:#f92672">&gt;</span>[RESOURCES_PATH]/MyApplication.pkg<span style="color:#f92672">&lt;/pkg-ref&gt;</span>
-  <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.mylicensemanager.thirdpartycompanyname.driver&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;6.40&#34;</span><span style="color:#f92672">&gt;</span>[RESOURCES_PATH]/MyLicenseManager.pkg<span style="color:#f92672">&lt;/pkg-ref&gt;</span>
-<span style="color:#f92672">&lt;/installer-gui-script&gt;</span>
-</code></pre></div><p>With all these things we have generated a final <code>.pkg</code> file with a custom installer and we have added the extra <code>MyLicenseManager</code> software to be also installed with it. Now we need to sign our package and for that we need to have a &ldquo;Developer ID Installer&rdquo; certificate in our keychain. First we need to  unlock it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;installer-gui-script</span> <span style="color:#a6e22e">minSpecVesion=</span><span style="color:#e6db74">&#34;1&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;options</span> <span style="color:#a6e22e">require-scripts=</span><span style="color:#e6db74">&#34;false&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;background</span> <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/background.png&#34;</span> <span style="color:#a6e22e">scaling=</span><span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#a6e22e">mime-type=</span><span style="color:#e6db74">&#34;image/png&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;background-darkAqua</span>  <span style="color:#a6e22e">alignment=</span><span style="color:#e6db74">&#34;left&#34;</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/background.png&#34;</span> <span style="color:#a6e22e">scaling=</span><span style="color:#e6db74">&#34;none&#34;</span> <span style="color:#a6e22e">mime-type=</span><span style="color:#e6db74">&#34;image/png&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;license</span> <span style="color:#a6e22e">file=</span><span style="color:#e6db74">&#34;[RESOURCES_PATH]/license.txt&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;domains</span> <span style="color:#a6e22e">enable_anywhere=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enable_currentUserHome=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">enable_localSystem=</span><span style="color:#e6db74">&#34;true&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;title&gt;</span>My Application<span style="color:#f92672">&lt;/title&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;choices-outline&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;line</span> <span style="color:#a6e22e">choice=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/choices-outline&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;choice</span> <span style="color:#a6e22e">description=</span><span style="color:#e6db74">&#34;default&#34;</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span> <span style="color:#a6e22e">start_enabled=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">title=</span><span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.mylicensemanager.thirdpartycompanyname.driver&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span><span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/choice&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.myapplication.x86_64.dfernandez&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;1.0.0&#34;</span><span style="color:#f92672">&gt;</span>[RESOURCES_PATH]/MyApplication.pkg<span style="color:#f92672">&lt;/pkg-ref&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;pkg-ref</span> <span style="color:#a6e22e">id=</span><span style="color:#e6db74">&#34;com.mylicensemanager.thirdpartycompanyname.driver&#34;</span> <span style="color:#a6e22e">version=</span><span style="color:#e6db74">&#34;6.40&#34;</span><span style="color:#f92672">&gt;</span>[RESOURCES_PATH]/MyLicenseManager.pkg<span style="color:#f92672">&lt;/pkg-ref&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/installer-gui-script&gt;</span>
+</span></span></code></pre></div><p>With all these things we have generated a final <code>.pkg</code> file with a custom installer and we have added the extra <code>MyLicenseManager</code> software to be also installed with it. Now we need to sign our package and for that we need to have a &ldquo;Developer ID Installer&rdquo; certificate in our keychain. First we need to  unlock it:</p>
 <blockquote>
 <p><code>security unlock-keychain -p &lt;USERNAME&gt; /Users/&lt;USERNAME&gt;/Library/Keychains/login.keychain</code></p>
 </blockquote>
@@ -162,7 +162,7 @@
 <li>Distribute your application!</li>
 </ol>
 <hr>
-<p><br /></p>
+<br />
 <p>I really hope this can help you if you are currently facing one or more of the problems I&rsquo;ve faced with. If you have better ways to solve some situations or extra steps that would be useful please write them down and I will complete this guide and also apply them for my automated process. I also have documented the packaging adventures volume II in Windows and I will post it in the future (besides it is quite easier than macOS).</p>
 <p>See you all in the next post!</p>
 
@@ -187,7 +187,7 @@
                     <span>Git survival kit</span>
                 </a>
             </div>
-                            
+                              
         </div>
         <hr />
         

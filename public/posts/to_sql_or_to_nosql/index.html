@@ -64,7 +64,7 @@
         <div class="post-content" id="post-content">
             <p>To SQL or to NoSQL? Is that the real question? Nah, the real war out there is to agree on how to pronounce it. Do you pronounce it “Ess-cue-ell” or maybe you pronounce it “sequel” like Bill Gates among others? If you want to know how I pronounce it… I use both just to bother people.</p>
 <p>Jokes aside, let’s get on this post! Would you like to know the differences between these two database models? A lot of people are used to always using the same model because they use it at their work and since it is the one they know the most they use it on their personal projects too. It’s very common, so if you never went further on this and want a quick review then you are in the right place, my friend.</p>
-<p><br /></p>
+<br />
 <hr>
 <h5 id="sql-databases">SQL databases:</h5>
 <p>SQL stands for Structured Query Language and it is a programming language with its own syntax to manipulate data on relational databases, so it is not a database system itself. It&rsquo;s main benefit is that it has a very good query system so you can manage data in a more flexible way.</p>
@@ -76,70 +76,70 @@
 <p>The developer has the responsibility of relating data between collections so it will need to query from them and after that join it using code. Data can also be nested inside your collections so that will make the system faster reading relevant data. For example, you can have a car and the owner&rsquo;s name. In counterpart it is also the developer responsibility to keep that owner name updated in case the car has been sold to another driver (or the owner has changed its name), so as you can imagine this database system will be slower writing data (again, it will be only evident when we increase a lot the amount of data). A common side effect is denormalization, data duplication, and eventual consistency, requiring complex access patterns or synchronization logic.</p>
 <h5 id="comparison">Comparison:</h5>
 <table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"><em>SQL</em></th>
-<th style="text-align:center"><em>NoSQL</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>ACID Transactions</strong></td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">Yes, but not intended for it</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>BASE Transactions</strong></td>
-<td style="text-align:center">Yes, but not intended for it</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Fast reading</strong></td>
-<td style="text-align:center">No</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Fast writing</strong></td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">No</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Scalability</strong></td>
-<td style="text-align:center">Vertical</td>
-<td style="text-align:center">Horizontal</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>High performance</strong></td>
-<td style="text-align:center">No</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Integrity</strong></td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">No</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Query Flexibility</strong></td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">No</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Data duplication susceptible</strong></td>
-<td style="text-align:center">No</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Data structure</strong></td>
-<td style="text-align:center">Tables</td>
-<td style="text-align:center">Json, key-value pairs, graphs, etc.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Priorities</strong></td>
-<td style="text-align:center">Integrity, consistency, stability</td>
-<td style="text-align:center">Scalability, performance</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: center"><em>SQL</em></th>
+          <th style="text-align: center"><em>NoSQL</em></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>ACID Transactions</strong></td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Yes, but not intended for it</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>BASE Transactions</strong></td>
+          <td style="text-align: center">Yes, but not intended for it</td>
+          <td style="text-align: center">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fast reading</strong></td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fast writing</strong></td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Scalability</strong></td>
+          <td style="text-align: center">Vertical</td>
+          <td style="text-align: center">Horizontal</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>High performance</strong></td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Integrity</strong></td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Query Flexibility</strong></td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Data duplication susceptible</strong></td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Data structure</strong></td>
+          <td style="text-align: center">Tables</td>
+          <td style="text-align: center">Json, key-value pairs, graphs, etc.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Priorities</strong></td>
+          <td style="text-align: center">Integrity, consistency, stability</td>
+          <td style="text-align: center">Scalability, performance</td>
+      </tr>
+  </tbody>
 </table>
 <p><em><code>NOTE: As said, this is considering big amounts of data and what these systems are intended for. i.e.: not being susceptible doesn't mean that relational databases cannot have duplicated data.</code></em></p>
 <h5 id="conclusions">Conclusions:</h5>
@@ -158,7 +158,7 @@
 <li><a href="https://www.youtube.com/watch?v=zmXl2dOGWL8">https://www.youtube.com/watch?v=zmXl2dOGWL8</a></li>
 </ul>
 <hr>
-<p><br /></p>
+<br />
 <p>What database model do you use the most? In my case I mostly use NoSQL since applications in my job work with a lot of data that needs to be presented quickly in the UI and storage process is done in small amounts of data when the user performs certain actions. Anyway I like both but if I had to choose one I definitely would go for NoSQL. I just like it and find it easier. But, as I said at the beginning of this post, it is just because I&rsquo;m used to it!</p>
 <p>So, what is your point of view here? Don&rsquo;t hesitate to comment below. As always,&hellip; see you all in the next post!</p>
 
@@ -183,7 +183,7 @@
                     <span>Packaging adventures volume III: Wix</span>
                 </a>
             </div>
-                
+                  
         </div>
         <hr />
         

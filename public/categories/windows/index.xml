@@ -4,26 +4,23 @@
     <title>Windows on The imposter syndrome</title>
     <link>https://www.theimpostersyndrome.dev/categories/windows/</link>
     <description>Recent content in Windows on The imposter syndrome</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.theimpostersyndrome.dev/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.theimpostersyndrome.dev/categories/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Packaging adventures volume III: Wix</title>
       <link>https://www.theimpostersyndrome.dev/posts/windowswixpackaging/</link>
       <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://www.theimpostersyndrome.dev/posts/windowswixpackaging/</guid>
-      <description>Third and final chapter of the packaging adventures. The previous post about Windows packaging was posted a couple of months ago and we learned how to create a simple Windows installer thanks to a Visual Studio extension. If you remember properly, there were some inconvenient like having two different installers (an MSI file for the app and an EXE file for the setup installer with the required extra components for our application).</description>
+      <description>&lt;p&gt;Third and final chapter of the packaging adventures. The previous post about &lt;a href=&#34;https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/&#34;&gt;Windows packaging&lt;/a&gt; was posted a couple of months ago and we learned how to create a simple Windows installer thanks to a Visual Studio extension. If you remember properly, there were some inconvenient like having two different installers (an MSI file for the app and an EXE file for the setup installer with the required extra components for our application). If you need a single EXE file, more modern-looking and cover the deficiencies of the previous packaging system, keep reading. I’ve got something for you!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Packaging adventures volume II: Windows</title>
       <link>https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/</link>
       <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://www.theimpostersyndrome.dev/posts/windowsuglypackaging/</guid>
-      <description>So here we are with the second part of the packaging adventures. If you remember, we already talked about macOS packaging a few months ago and now it&amp;rsquo;s time to show you how to do it on Windows. Windows has many ways to package your applications and I am currently using another one for my production packages, but that will be explained in a third part of this packaging adventures. Let&amp;rsquo;s start with one of the most basic ways to achieve it.</description>
+      <description>&lt;p&gt;So here we are with the second part of the packaging adventures. If you remember, we already talked about &lt;a href=&#34;https://www.theimpostersyndrome.dev/posts/macospackaging/&#34;&gt;macOS packaging&lt;/a&gt; a few months ago and now it&amp;rsquo;s time to show you how to do it on Windows. Windows has many ways to package your applications and I am currently using another one for my production packages, but that will be explained in a third part of this packaging adventures. Let&amp;rsquo;s start with one of the most basic ways to achieve it. Let&amp;rsquo;s go!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

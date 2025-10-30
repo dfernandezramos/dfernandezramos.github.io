@@ -4,8 +4,72 @@
     <title>Categories on The imposter syndrome</title>
     <link>https://www.theimpostersyndrome.dev/categories/</link>
     <description>Recent content in Categories on The imposter syndrome</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 30 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.theimpostersyndrome.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.theimpostersyndrome.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Avalonia</title>
+      <link>https://www.theimpostersyndrome.dev/categories/avalonia/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/avalonia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>https://www.theimpostersyndrome.dev/categories/development/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writing-Posts-Category</title>
+      <link>https://www.theimpostersyndrome.dev/categories/writing-posts-category/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/writing-posts-category/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Debugging</title>
+      <link>https://www.theimpostersyndrome.dev/categories/debugging/</link>
+      <pubDate>Wed, 30 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/debugging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Database</title>
+      <link>https://www.theimpostersyndrome.dev/categories/database/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Packaging</title>
+      <link>https://www.theimpostersyndrome.dev/categories/packaging/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/packaging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://www.theimpostersyndrome.dev/categories/windows/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DotNet</title>
+      <link>https://www.theimpostersyndrome.dev/categories/dotnet/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/dotnet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MacOS</title>
+      <link>https://www.theimpostersyndrome.dev/categories/macos/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/macos/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

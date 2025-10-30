@@ -64,7 +64,7 @@
         <div class="post-content" id="post-content">
             <p>Have you ever had the feeling that something really magic has happened to your computer because of a thing that was working suddenly, out of nowhere, stopped working? Wait, maybe I made some changes, let’s go back to master&hellip; mmh no&hellip; it isn’t working anymore… but how? This code is working on other machines! It worked on mine like 20 minutes ago! This is impossible, nothing changed and it is not working anymore. Well… maybe I performed a little change that is not related at all with this but&hellip; I just installed/updated a couple of things through <code>brew</code>&hellip; Could that be the issue? IMPOSSIBLE!</p>
 <p>Well&hellip; impossible is nothing so let me relate how I spent a good afternoon solving this little but disturbing issue!</p>
-<p><br /></p>
+<br />
 <hr>
 <h5 id="scenario">Scenario:</h5>
 <p>Working on a branch, everything is fine and just about to clean up some commit messages to create the pull request. I perform some things non-related to that code while passing the tests and after that I just want to check the functionality once again. Maybe performing some minor changes that will improve the code. I press the “Run” button and it compiles like a charm. The application starts opening and… boom! You have a nice runtime crash waiting there for you. Maybe those minor changes I performed after running the tests, so I stash the changes and try to run again. Nothing. Change to master, perform a full cleanup and build again from scratch. No big prize.</p>
@@ -74,9 +74,9 @@
 <p>The first thing that comes to my mind is to use the <code>otool</code> command to check the dependencies of each library, but there are other libraries that are loaded in runtime through <code>dllimport</code> so running the app through console using <code>MONO_LOG_LEVEL=debug</code> and using <code>grep</code> to filter the output to print all the text that contains <code>DllImport loaded library</code>. Bingo:</p>
 <p><code>Mono: DllImport loaded library ‘/Library/Frameworks/Mono.framework/Libraries/libgtk-quartz-2.0.0.dylib’’.</code></p>
 <p>I know that <code>libgtk-quartz-2.0.0.dylib</code> should be copied from a Nuget package to the output directory and be loaded from there on runtime. Now it’s time to guess why it is failing loading the library from there in the first instance. For that I will just run again the application with the <code>MONO_LOG_LEVEL=debug</code> and print all the output looking for <code>libgtk-quartz</code>:</p>
-<pre tabindex="0"><code>Mono: DllImport error loading library '/Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib': 'dlopen(/Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib, 9): Library not loaded: @rpath/libpangocairo-1.0.0.dylib
+<pre tabindex="0"><code>Mono: DllImport error loading library &#39;/Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib&#39;: &#39;dlopen(/Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib, 9): Library not loaded: @rpath/libpangocairo-1.0.0.dylib
  Referenced from: /Users/dfernandez/Development/MyApp/src/SampleAppDemo.GTK/bin/Debug/libgtk-quartz-2.0.0.dylib
- Reason: Incompatible library version: libgtk-quartz-2.0.0.dylib requires version 4204.0.0 or later, but libpangocairo-1.0.0.dylib provides version 3501.0.0'.
+ Reason: Incompatible library version: libgtk-quartz-2.0.0.dylib requires version 4204.0.0 or later, but libpangocairo-1.0.0.dylib provides version 3501.0.0&#39;.
 </code></pre><p>We are in the good way to solve the issue.</p>
 <h5 id="what-is-causing-the-issue">What is causing the issue:</h5>
 <p>So, it turns out that our <code>libgtk-quartz</code> library needs <code>libpangocairo-1.0.0.dylib</code> version 4204 or higher, but the one that is loaded has the 3501 version.</p>
@@ -116,7 +116,7 @@ Load command 48
      cmdsize 40
         path @executable_path/../lib (offset 12)
 </code></pre><p>Everything seems fine, we have 5 different <code>LC_RPATH</code> to replace <code>@rpath</code> for, but let’s debug again our application printing a line each time dyld expands an <code>@rpath</code> variable saying if it was successful or not. For that we will set the <code>DYLD_PRINT_RPATHS</code> environment variable before running our application again through the terminal. Let’s see what we got now:</p>
-<pre tabindex="0"><code>Mono: DllImport attempting to load: 'libgtk-quartz-2.0.0.dylib'.
+<pre tabindex="0"><code>Mono: DllImport attempting to load: &#39;libgtk-quartz-2.0.0.dylib&#39;.
 RPATH failed expanding     @rpath/libpangocairo-1.0.0.dylib to: /Users/dfernandez/Development/MyApp/src/libpangocairo-1.0.0.dylib
 RPATH failed expanding     @rpath/libpangocairo-1.0.0.dylib to: /Users/dfernandez/Development/MyApp/src/SampleApp/SampleAppDemo.GTK/bin/Debug/../libpangocairo-1.0.0.dylib
 RPATH failed expanding     @rpath/libpangocairo-1.0.0.dylib to: /Library/Frameworks/Mono.framework/Versions/6.12.0/bin/../libpangocairo-1.0.0.dylib
@@ -132,7 +132,7 @@ RPATH successful expansion of @rpath/libpangocairo-1.0.0.dylib to: /Library/Fram
 <li><a href="https://wincent.com/wiki/@executable_path,_@load_path_and_@rpath">https://wincent.com/wiki/@executable_path,_@load_path_and_@rpath</a></li>
 </ul>
 <hr>
-<p><br /></p>
+<br />
 <p>I can completely understand that this kind of debugging is not as loved as just debugging code, but for some developers it just turns as tedious as sweet because the fact of getting clues letting you get to the issue more and more is just satisfying. It is as addictive as eating sunflower seeds.</p>
 <p>Please let me know if you have some questions or suggestions for this post. See you all in the next post!</p>
 
@@ -141,15 +141,23 @@ RPATH successful expansion of @rpath/libpangocairo-1.0.0.dylib to: /Library/Fram
         
         <hr />
         <div class="row next-prev-navigator">
-                                  
-            <div class="col-md-12 next-article">
+                                 
+            <div class="col-md-6 previous-article">
+                <a href="/posts/avalonia/" class="btn btn-outline-info">
+                    <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+                    <br />
+                    <span>First date with AvaloniaUI</span>
+                </a>
+            </div>
+             
+            <div class="col-md-6 next-article">
                 <a href="/posts/to_sql_or_to_nosql/" class="btn btn-outline-info">
                     <span>Next <i class="fas fa-chevron-circle-right"></i></span>
                     <br />
                     <span>To SQL or to NoSQL?</span>
                 </a>
             </div>
-              
+                
         </div>
         <hr />
         

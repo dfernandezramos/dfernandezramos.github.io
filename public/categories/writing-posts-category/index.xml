@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>writing-posts-category on The imposter syndrome</title>
+    <title>Writing-Posts-Category on The imposter syndrome</title>
     <link>https://www.theimpostersyndrome.dev/categories/writing-posts-category/</link>
-    <description>Recent content in writing-posts-category on The imposter syndrome</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Writing-Posts-Category on The imposter syndrome</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.theimpostersyndrome.dev/categories/writing-posts-category/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.theimpostersyndrome.dev/categories/writing-posts-category/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First date with AvaloniaUI</title>
+      <link>https://www.theimpostersyndrome.dev/posts/avalonia/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/posts/avalonia/</guid>
+      <description>&lt;p&gt;Wow, it has really been a long time without posting here! 8 months! Lots of (good) things happening in my personal life so I decided to just write here once I really have something to write about. Something that engages me. And here I am!&lt;/p&gt;&#xA;&lt;p&gt;Last summer I had to hire a new senior developer for my team and during the interview process, one profile got our attention in a particular way. He didn’t ask for extra money, goodies or benefits. He wanted me to evaluate the idea of migrating our application from GTK to Avalonia. He got me. After checking his amazing background with multiplatform front-end frameworks it was just matter of time to start working on this adventure.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Git survival kit</title>
       <link>https://www.theimpostersyndrome.dev/posts/git_survival_kit/</link>
       <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://www.theimpostersyndrome.dev/posts/git_survival_kit/</guid>
-      <description>When I first started in my current company I hadn&amp;rsquo;t used any version control system so when I started using Git it was a little tricky. Lucky me I had one of the best developers I&amp;rsquo;ve ever worked with, Víctor Guzmán. I remember he said something like: &amp;ldquo;Ok, you can use a GUI for a bad Git usage or you can use the Terminal for learning real Git usage. I use Terminal so I won&amp;rsquo;t help you with if you don&amp;rsquo;t use it&amp;rdquo;.</description>
+      <description>&lt;p&gt;When I first started in my current company I hadn&amp;rsquo;t used any version control system so when I started using Git it was a little tricky. Lucky me I had one of the best developers I&amp;rsquo;ve ever worked with, &lt;a href=&#34;https://github.com/vguzmanp&#34;&gt;Víctor Guzmán&lt;/a&gt;. I remember he said something like: &amp;ldquo;Ok, you can use a GUI for a bad Git usage or you can use the Terminal for learning real Git usage. I use Terminal so I won&amp;rsquo;t help you with if you don&amp;rsquo;t use it&amp;rdquo;. Since that day he turned me on a Terminal paladin and five years later I have not used a Git GUI tool for nothing (well, except &lt;code&gt;gitk&lt;/code&gt;&amp;hellip; and &lt;a href=&#34;https://www.gitkraken.com/&#34;&gt;GitKraken&lt;/a&gt; I used once for a very big mess with a rebase conflict).&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
