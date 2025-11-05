@@ -4,18 +4,16 @@
     <title>Avalonia on The imposter syndrome</title>
     <link>https://www.theimpostersyndrome.dev/categories/avalonia/</link>
     <description>Recent content in Avalonia on The imposter syndrome</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.theimpostersyndrome.dev/categories/avalonia/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.theimpostersyndrome.dev/categories/avalonia/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>First date with AvaloniaUI</title>
       <link>https://www.theimpostersyndrome.dev/posts/avalonia/</link>
       <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.theimpostersyndrome.dev/posts/avalonia/</guid>
-      <description>Wow, it has really been a long time without posting here! 8 months! Lots of (good) things happening in my personal life so I decided to just write here once I really have something to write about. Something that engages me. And here I am!
-Last summer I had to hire a new senior developer for my team and during the interview process, one profile got our attention in a particular way.</description>
+      <description>&lt;p&gt;Wow, it has really been a long time without posting here! 8 months! Lots of (good) things happening in my personal life so I decided to just write here once I really have something to write about. Something that engages me. And here I am!&lt;/p&gt;&#xA;&lt;p&gt;Last summer I had to hire a new senior developer for my team and during the interview process, one profile got our attention in a particular way. He didn’t ask for extra money, goodies or benefits. He wanted me to evaluate the idea of migrating our application from GTK to Avalonia. He got me. After checking his amazing background with multiplatform front-end frameworks it was just matter of time to start working on this adventure.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

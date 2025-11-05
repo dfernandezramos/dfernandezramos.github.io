@@ -76,70 +76,70 @@
 <p>The developer has the responsibility of relating data between collections so it will need to query from them and after that join it using code. Data can also be nested inside your collections so that will make the system faster reading relevant data. For example, you can have a car and the owner&rsquo;s name. In counterpart it is also the developer responsibility to keep that owner name updated in case the car has been sold to another driver (or the owner has changed its name), so as you can imagine this database system will be slower writing data (again, it will be only evident when we increase a lot the amount of data). A common side effect is denormalization, data duplication, and eventual consistency, requiring complex access patterns or synchronization logic.</p>
 <h5 id="comparison">Comparison:</h5>
 <table>
-<thead>
-<tr>
-<th style="text-align:left"></th>
-<th style="text-align:center"><em>SQL</em></th>
-<th style="text-align:center"><em>NoSQL</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>ACID Transactions</strong></td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">Yes, but not intended for it</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>BASE Transactions</strong></td>
-<td style="text-align:center">Yes, but not intended for it</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Fast reading</strong></td>
-<td style="text-align:center">No</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Fast writing</strong></td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">No</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Scalability</strong></td>
-<td style="text-align:center">Vertical</td>
-<td style="text-align:center">Horizontal</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>High performance</strong></td>
-<td style="text-align:center">No</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Integrity</strong></td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">No</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Query Flexibility</strong></td>
-<td style="text-align:center">Yes</td>
-<td style="text-align:center">No</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Data duplication susceptible</strong></td>
-<td style="text-align:center">No</td>
-<td style="text-align:center">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Data structure</strong></td>
-<td style="text-align:center">Tables</td>
-<td style="text-align:center">Json, key-value pairs, graphs, etc.</td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>Priorities</strong></td>
-<td style="text-align:center">Integrity, consistency, stability</td>
-<td style="text-align:center">Scalability, performance</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: left"></th>
+          <th style="text-align: center"><em>SQL</em></th>
+          <th style="text-align: center"><em>NoSQL</em></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>ACID Transactions</strong></td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">Yes, but not intended for it</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>BASE Transactions</strong></td>
+          <td style="text-align: center">Yes, but not intended for it</td>
+          <td style="text-align: center">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fast reading</strong></td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Fast writing</strong></td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Scalability</strong></td>
+          <td style="text-align: center">Vertical</td>
+          <td style="text-align: center">Horizontal</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>High performance</strong></td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Integrity</strong></td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Query Flexibility</strong></td>
+          <td style="text-align: center">Yes</td>
+          <td style="text-align: center">No</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Data duplication susceptible</strong></td>
+          <td style="text-align: center">No</td>
+          <td style="text-align: center">Yes</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Data structure</strong></td>
+          <td style="text-align: center">Tables</td>
+          <td style="text-align: center">Json, key-value pairs, graphs, etc.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Priorities</strong></td>
+          <td style="text-align: center">Integrity, consistency, stability</td>
+          <td style="text-align: center">Scalability, performance</td>
+      </tr>
+  </tbody>
 </table>
 <p><em><code>NOTE: As said, this is considering big amounts of data and what these systems are intended for. i.e.: not being susceptible doesn't mean that relational databases cannot have duplicated data.</code></em></p>
 <h5 id="conclusions">Conclusions:</h5>
