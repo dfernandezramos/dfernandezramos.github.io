@@ -7,15 +7,15 @@ skills:
 
 - name: Avalonia UI
   icon: "images/skills/avalonia.png"
-  summary: "Using as main frontend language for desktop professional development. Capable of designing user friendly good looking views."
+  summary: "Using as main frontend language for mobile and desktop applications. Capable of designing user friendly modern views."
 
 - name: GTK+
   icon: "images/skills/gtk.png"
-  summary: "Using as main frontend language for desktop professional development. Capable of designing user friendly good looking views."
+  summary: "Experience using it as dektop frontend UI framework. Capable of designing user friendly good looking views."
 
 - name: Xamarin
   icon: "images/skills/xamarin.png"
-  summary: "Using as main frontend language for mobile professional and recreative development. Microsoft Xamarin professional developer certified."
+  summary: "Experience using it as mobile frontend UI framework. Microsoft Xamarin professional developer certified."
 
 - name: Skia 2D Graphics library
   icon: "images/skills/skia.png"
@@ -41,10 +41,10 @@ skills:
   icon: "images/skills/python.png"
   summary: "Second backend developing language. Experience developing and mantaining Fluendo S.A.'s own dependency management system and own CI/CD system."
 
-- name: macOS
-  icon: "images/skills/apple.png"
-  summary: "Using as main operating system. Capable of writing bash/shell scripts, generate installers from scratch and mantain the project infrastructure."
+- name: CI/CD
+  icon: "images/skills/githubactions.png"
+  summary: "Experience setting up and maintaining CI/CD pipelines using self-hosted and cloud nodes on Jenkins and Github Actions."
 
-- name: Windows
-  icon: "images/skills/windows.png"
-  summary: "Using as second main operating system. Also capable of writing scripts, generate installers from scratch and mantain the project infrastructure."
+- name: WPF
+  icon: "images/skills/wpf.png"
+  summary: "Experience using it as dektop frontend UI framework. Capable of designing user friendly good looking views."

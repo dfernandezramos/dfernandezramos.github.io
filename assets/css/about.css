@@ -115,6 +115,10 @@
     border-color: #fd7e14;
 }
 
+.circular-progress.red .circular-progress-bar {
+    border-color: #dc3545;
+}
+
 .circular-progress-percentage-50 {
   animation: circular-loading-50 0s linear forwards 1.8s;
 }

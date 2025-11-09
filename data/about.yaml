@@ -1,15 +1,15 @@
 # your designation
-designation: Software Engineer
+designation: Lead Software Engineer
 # your company information
 company:
-  name: Fluendo S.A.
-  url: "https://fluendo.com/en/"
+  name: Longomatch
+  url: "https://longomatch.com/"
 
 # your resume. this file path should be relative to you "static" directory
 resume: "files/resume.pdf"
 
 # a summary about you
-summary: 'I am a .Net software engineer with 5 years of working experience with C#. I have built multiplatform desktop applications using GTK+2 and mobile apps using Xamarin, involving myself in everything related to the project (Infrastructure, CI/CD, Backend, Frontend, etc.). My specialty are video analysis projects.'
+summary: 'Software engineer with strong experience in C# mobile and desktop applications. Involved in every lifecycle stage from its definition to its implementation, packaging, and distribution. Skilled in clean code and SOLID principles, CI/CD, version control, and code testing. Proven ability leading development, IT, and QA teams.'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -35,17 +35,20 @@ socialLinks:
 # currently supported color: blue, yellow, pink, green
 softSkills:
 - name: Organization
-  percentage: 95
+  percentage: 100
   color: orange
 - name: Team Work
-  percentage: 85
+  percentage: 90
   color: yellow
 - name: Communication
-  percentage: 80
+  percentage: 95
   color: pink
 - name: Hard Working
   percentage: 95
   color: green
 - name: Perseverance
+  percentage: 95
+  color: red
+- name: Leadership
   percentage: 90
   color: blue

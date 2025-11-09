@@ -11,6 +11,14 @@ buttons:
 
 # your projects
 projects:
+  - name: Longoboard
+    logo: images/skills/csharp.png
+    role: Developer
+    timeline: "Jul 2025"
+    url: https://longomatch.com/es/longomatch-mobile/
+    summary: Avalonia desktop and mobile application. Plan your tactics, turn them into drills and organize your sessions in one single tool with Longoboard.
+    tags: ["professional"]
+
   - name: Vikle
     logo: images/skills/csharp.png
     role: Developer

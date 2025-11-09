@@ -2,22 +2,24 @@
 experiences:
   - designation: C# Senior Software Engineer (Dev lead)
     company:
-      name: Fluendo S.A.
-      url: "https://fluendo.com/"
+      name: Fluendo VAS S.L.
+      url: "https://longomatch.com/"
       location: Barcelona
-      overview: Multimedia software developer on C# applications for Windows, macOS, iOS and Android.
+      overview: Software engineer on multimedia C# applications for Windows, macOS, iOS and Android.
     start: Jun 2019
     responsibilities:
+      - Design, develop and manage video analysis apps [LongoMatch](https://longomatch.com/) and [Longoboard](https://longomatch.com/es/longomatch-mobile/).
       - Avalonia UI and Xamarin Forms
       - Cairo and Skia 2D graphics libraries
-      - Manage IT and development teams
+      - SQLite and NoSQL databases
+      - Manage development, QA and sysadmin teams
 
   - designation: C# Junior Software Engineer
     company:
       name: Fluendo S.A.
       url: "https://fluendo.com/"
       location: Barcelona
-      overview: Multimedia software developer on C# applications for Windows, macOS, iOS and Android.
+      overview: Software engineer on multimedia C# applications for Windows, macOS, iOS and Android.
     start: Jan 2016
     end: May 2019
     responsibilities:
