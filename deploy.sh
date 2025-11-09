@@ -11,6 +11,9 @@ cd public
 # Fetch the new pushed changes
 git fetch
 
+# Discard any local changes
+git checkout .
+
 # Checkout to master branch
 git checkout master
 
@@ -50,3 +53,8 @@ git checkout master
 
 # Reset master to the upstream level
 git reset --hard origin/master
+
+# Update public submodule
+git add public
+git commit -m "Update public submodule"
+git push origin master
