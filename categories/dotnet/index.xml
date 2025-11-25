@@ -6,8 +6,15 @@
     <description>Recent content in DotNet on The imposter syndrome</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.theimpostersyndrome.dev/categories/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.NET Concurrency Essentials I</title>
+      <link>https://www.theimpostersyndrome.dev/posts/async1/</link>
+      <pubDate>Tue, 25 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/posts/async1/</guid>
+      <description>&lt;p&gt;Do you ever feel that sometimes you just know how things are done but never stopped to understand why? You know you are doing things right because that is the way someone told you. Then when someone asks you something related to that topic you just find yourself explaining the &amp;ldquo;how&amp;rdquo; but not the &amp;ldquo;why&amp;rdquo;. If that is not your case, you are a lucky one. That is not mine, so I decided to go deep on basic things I use on my every-day work basis and leave them as blog posts.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>.NET Framework vs .NET Core</title>
       <link>https://www.theimpostersyndrome.dev/posts/core_vs_framework/</link>

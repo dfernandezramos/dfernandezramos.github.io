@@ -6,20 +6,34 @@
     <description>Recent content in Categories on The imposter syndrome</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.theimpostersyndrome.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Avalonia</title>
-      <link>https://www.theimpostersyndrome.dev/categories/avalonia/</link>
-      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.theimpostersyndrome.dev/categories/avalonia/</guid>
+      <title>Asynchrony</title>
+      <link>https://www.theimpostersyndrome.dev/categories/asynchrony/</link>
+      <pubDate>Tue, 25 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/asynchrony/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
       <link>https://www.theimpostersyndrome.dev/categories/development/</link>
-      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 25 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://www.theimpostersyndrome.dev/categories/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DotNet</title>
+      <link>https://www.theimpostersyndrome.dev/categories/dotnet/</link>
+      <pubDate>Tue, 25 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/dotnet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Avalonia</title>
+      <link>https://www.theimpostersyndrome.dev/categories/avalonia/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/categories/avalonia/</guid>
       <description></description>
     </item>
     <item>
@@ -55,13 +69,6 @@
       <link>https://www.theimpostersyndrome.dev/categories/windows/</link>
       <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://www.theimpostersyndrome.dev/categories/windows/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DotNet</title>
-      <link>https://www.theimpostersyndrome.dev/categories/dotnet/</link>
-      <pubDate>Mon, 28 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.theimpostersyndrome.dev/categories/dotnet/</guid>
       <description></description>
     </item>
     <item>

@@ -2,22 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.theimpostersyndrome.dev/posts/async1/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.theimpostersyndrome.dev/categories/asynchrony/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.theimpostersyndrome.dev/categories/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.theimpostersyndrome.dev/categories/development/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.theimpostersyndrome.dev/categories/dotnet/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.theimpostersyndrome.dev/posts/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.theimpostersyndrome.dev/</loc>
+    <lastmod>2025-11-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.theimpostersyndrome.dev/categories/avalonia/</loc>
     <lastmod>2022-03-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.theimpostersyndrome.dev/categories/</loc>
-    <lastmod>2022-03-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.theimpostersyndrome.dev/categories/development/</loc>
-    <lastmod>2022-03-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.theimpostersyndrome.dev/posts/avalonia/</loc>
-    <lastmod>2022-03-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.theimpostersyndrome.dev/posts/</loc>
-    <lastmod>2022-03-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.theimpostersyndrome.dev/</loc>
     <lastmod>2022-03-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.theimpostersyndrome.dev/categories/writing-posts-category/</loc>
@@ -51,9 +60,6 @@
     <lastmod>2021-01-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.theimpostersyndrome.dev/posts/core_vs_framework/</loc>
-    <lastmod>2020-12-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.theimpostersyndrome.dev/categories/dotnet/</loc>
     <lastmod>2020-12-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.theimpostersyndrome.dev/posts/dotnetinabox/</loc>
