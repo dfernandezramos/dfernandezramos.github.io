@@ -11,7 +11,7 @@ skills:
 
 - name: GTK+
   icon: "images/skills/gtk.png"
-  summary: "Experience using it as dektop frontend UI framework. Capable of designing user friendly good looking views."
+  summary: "Experience using it as desktop frontend UI framework. Capable of designing user friendly good looking views."
 
 - name: Xamarin
   icon: "images/skills/xamarin.png"
@@ -47,4 +47,4 @@ skills:
 
 - name: WPF
   icon: "images/skills/wpf.png"
-  summary: "Experience using it as dektop frontend UI framework. Capable of designing user friendly good looking views."
+  summary: "Experience using it as desktop frontend UI framework. Capable of designing user friendly good looking views."
