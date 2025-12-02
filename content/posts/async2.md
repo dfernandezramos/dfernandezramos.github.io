@@ -12,6 +12,8 @@ Let's continue with the .Net asynchronous programming series.
 
 In the previous post we compared `Task` and `Thread` while explaining how the `Threadpool` and the `TaskScheduler` relate to tasks. Today I would like to expand more on two concepts so many others may have started with: `async` and `await`. What are they meant for? Are we achieving what we really want to achieve with them?
 
+I usually see people thinking that awaiting a task leads to parallel processing. For me, that is one of the biggest misconceptions about asynchrony.
+
 ---
 #### What are `async/await` for?
 
