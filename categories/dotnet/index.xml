@@ -6,8 +6,15 @@
     <description>Recent content in DotNet on The imposter syndrome</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.theimpostersyndrome.dev/categories/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.NET Concurrency Essentials II</title>
+      <link>https://www.theimpostersyndrome.dev/posts/async2/</link>
+      <pubDate>Mon, 01 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/posts/async2/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s continue with the .Net asynchronous programming series.&lt;/p&gt;&#xA;&lt;p&gt;In the previous post we compared &lt;code&gt;Task&lt;/code&gt; and &lt;code&gt;Thread&lt;/code&gt; while explaining how the &lt;code&gt;Threadpool&lt;/code&gt; and the &lt;code&gt;TaskScheduler&lt;/code&gt; relate to tasks. Today I would like to expand more on two concepts so many others may have started with: &lt;code&gt;async&lt;/code&gt; and &lt;code&gt;await&lt;/code&gt;. What are they meant for? Are we achieving what we really want to achieve with them?&lt;/p&gt;&#xA;&lt;p&gt;I usually see people thinking that awaiting a task leads to parallel processing. For me, that is one of the biggest misconceptions about asynchrony.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>.NET Concurrency Essentials I</title>
       <link>https://www.theimpostersyndrome.dev/posts/async1/</link>

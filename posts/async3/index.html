@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>I&#39;m an imposter</title>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>.NET Concurrency Essentials III</title>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -28,7 +28,7 @@
         
          <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
     <div class="container">
-        <a class="navbar-brand" href="https://www.theimpostersyndrome.dev/">
+        <a class="navbar-brand" href="http://localhost:1313/">
             <img src="/assets/images/logo.svg">The imposter syndrome</a>
         <button class="navbar-toggler navbar-light" type="button" >
         <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,7 @@
         
 <div class="container p-0 read-area">
     
-    <div class="hero-area col-sm-12" style='background-image: url(/images/posts/imposter.png);'>
+    <div class="hero-area col-sm-12" style='background-image: url(/images/posts/threads.jpg);'>
     </div>
 
     
@@ -54,35 +54,32 @@
         <div class="author-profile ml-auto align-self-lg-center">
             <img class="rounded-circle" src='/images/avatar.jpg' />
             <h5 class="author-name">David Fernández</h5>
-            <p>July 3, 2020</p>
+            <p>December 2, 2025</p>
         </div>
 
         <div class="title">
-            <h1>I&#39;m an imposter</h1>
+            <h1>.NET Concurrency Essentials III</h1>
         </div>
 
         <div class="post-content" id="post-content">
-            <p>I don&rsquo;t know how I got here. I know I did not do the best technical test my company gave to me because I know I left that two or three very important things I considere basic so my test was incomplete. The job interview was not bad at all but I feel that my interviewer has interviewed better developers than I. Maybe they were running out of time and they needed the first mid-decent developer they could find or maybe they had not enough money to hire that better developer that I was talking about. I&rsquo;m an imposter.</p>
-<p>Now I&rsquo;m here almost five years later and that imposter syndrome is almost gone. Almost. Why do I say so? Well, I&rsquo;ve acquired a lot of experience because of excellent colleagues and I know I&rsquo;m not the same as before but more or less a year ago I decided to have a friendly talk with my boss to move from my workplace to look for a new adventure (and a better salary, why not say so?) to get in touch with a new team and get new knowledge. As I said I acquired a lot of knowledge in that four years working in my company and I was capable (and I am) of proving that I have no limits in my personal and professional growth, I have combined my full-time job with a university degree as developer engineer that I&rsquo;m finishing this year with very good grades and I am capable of doing complex tasks without fear. I honestly thought that I was going to be that &ldquo;better developer&rdquo; I was talking about at the beginning of this post at any job interview and in a way I was because like in my hiring process in my current company that &ldquo;better developer&rdquo; was not hired. I&rsquo;m not saying that the other candidates were worse, please do not misunderstand me.</p>
-<p>So what happened? I&rsquo;ve been thinking a lot about it in this last year and the reason is obvious: I don&rsquo;t know how to explain what I do. I&rsquo;m not a theoretical but a practical person, so in the interview I limited myself to explain the huge amount of technologies I&rsquo;ve worked with and the different hard situations I had to face, but in front of questions like:</p>
-<blockquote>
-<p>Why did you do that thing that way?</p>
-<blockquote>
-<p>Why are you using that technology instead of this one?</p>
-<blockquote>
-<p>Can you tell us some alternatives of that?</p>
-<blockquote>
-<p>What benefits can you have doing that?</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>My answers were the same:</p>
-<blockquote>
-<p>Well I think that&hellip; well.. you know what? To not be wrong I&rsquo;m going to say that I don&rsquo;t know.</p>
-</blockquote>
-<p>You forgot something, David. You were not wrong but you also were not right.</p>
-<p>So that is the reason I am still almost an imposter and I want to fix it by sharing my knowledge with calm and a relaxing cup of &ldquo;café con leche&rdquo; in my &ldquo;habitación&rdquo; (spanish joke) because I think that will help me retaining that theoretical part I need to improve as a developer. I hope we all enjoy this blog and it would be amazing if I can help anyone with it. Promise I will try to post something monthly!</p>
+            <p>I wish you all a merry Christmas and a happy new year 2026. May your life goals be achieved this year! Here is my little present for you: the third post about concurrency on .Net!</p>
+<p>In the previous post we compared <code>Concurrency</code> and <code>Parallelism</code> and also explained how <code>async</code> and <code>await</code> really work under the hood. Today we are going with a shorter (but not least important) one: <code>SynchronizationContext</code>. What is it and why is it important in UI applications? Does it make my application faster?</p>
+<p>Let&rsquo;s go with it.</p>
+<hr>
+<h4 id="what-is-the-synchronizationcontext">What is the <code>SynchronizationContext</code>?</h4>
+<p>Each thread has an associated <code>SynchronizationContext</code>, which is a mechanism that handles <strong>where</strong> and <strong>how</strong> the code is executed. It often redirects the execution of code to a specific thread after an <code>await</code>. Normally, it is used in situations where we need to return the code execution to the UI thread since that is the only one where we can update UI elements. It ensures that async continuations that touch UI controls run on the UI thread.</p>
+<p>We can avoid returning the execution to the previous thread before the <code>await</code> asking the <code>Task</code> to not capture the context with its <code>ConfigureAwait(false)</code> method. This usually improves performance because the execution will continue in another ThreadPool thread instead of waiting for the previous one to be free. As mentioned, it is important to remember that if the code performs UI operations in a different thread other than the UI one the application may throw an exception and crash.</p>
+<p>Since  ASP.Net Core doesn&rsquo;t have UI, the <code>SynchronizationContext</code> is always null by default so continuations after an <code>await</code> will continue on any ThreadPool thread. This is intentional to avoid blocking threads unnecessarily. Classic ASP.Net did have a <code>SynchronizationContext</code>, although, in order to preserve request context. Today, we rely on IHttpContextAccessor to handle the HTTP context differently.</p>
+<p>Each UI framework like Avalonia, WPF, WinForms, etc. have their own implementation. <a href="https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Threading/AvaloniaSynchronizationContext.cs">Here you can check the implementation of the AvaloniaSynchronizationContext</a>.</p>
+<p>Some key points on the <code>SynchronizationContext</code>:</p>
+<ul>
+<li><strong>UI frameworks</strong> use a <em>single-threaded</em> model where all UI operations must run on the UI thread. Their custom SynchronizationContext returns the code execution back to that thread so code that touches UI elements behaves safely.</li>
+<li>If you use any <strong>library</strong> code it doesn’t need to know anything about your application threading model. Continuations will resume on the context of the caller of the library method letting libraries remain context-agnostic.</li>
+<li>It helps make thread continuation scheduling predictable by allowing you to know where the continuation runs.</li>
+</ul>
+<hr>
+<p>I think the post covers the introduction to the <code>SynchronizationContext</code> concept clearly without overwhelming readers. We could expand way more, for example, by looking at what its methods are for and how we can write our own implementation, but in most cases you won&rsquo;t need to do so. In the next one we will go back to <code>Task</code> and <code>Thread</code> and when and how to use each of them.</p>
+<p>As always, please don&rsquo;t hesitate to comment if you want to debate or clarify something.</p>
 <p>See you all in the next post!</p>
 
         </div>
@@ -90,15 +87,15 @@
         
         <hr />
         <div class="row next-prev-navigator">
-               
-            <div class="col-md-6 previous-article">
-                <a href="/posts/git_survival_kit/" class="btn btn-outline-info">
-                    <span><i class="fas fa-chevron-circle-left"></i> Prev</span>
+                                          
+            <div class="col-md-12 next-article">
+                <a href="/posts/async2/" class="btn btn-outline-info">
+                    <span>Next <i class="fas fa-chevron-circle-right"></i></span>
                     <br />
-                    <span>Git survival kit</span>
+                    <span>.NET Concurrency Essentials II</span>
                 </a>
             </div>
-                                       
+              
         </div>
         <hr />
         

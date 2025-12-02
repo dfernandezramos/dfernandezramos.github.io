@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>.NET Concurrency Essentials II</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+<link rel="stylesheet" href="/assets/css/navbar.css" />
+
+
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+
+
+<link rel="icon" type="image/svg" href="/assets/images/logo.svg" />
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css" />
+<link rel="stylesheet" href="/assets/css/single.css" /> 
+</head>
+
+<body>
+    <div class="container-fluid bg-dimmed wrapper">
+        
+         <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
+    <div class="container">
+        <a class="navbar-brand" href="https://www.theimpostersyndrome.dev/">
+            <img src="/assets/images/logo.svg">The imposter syndrome</a>
+        <button class="navbar-toggler navbar-light" type="button" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="top-nav-items">
+            <ul class="navbar-nav ml-auto">
+            </ul>
+            </ul>
+        </div>
+    </div>
+</nav> 
+
+        
+        
+<div class="container p-0 read-area">
+    
+    <div class="hero-area col-sm-12" style='background-image: url(/images/posts/threads.jpg);'>
+    </div>
+
+    
+    <div class="page-content">
+        <div class="author-profile ml-auto align-self-lg-center">
+            <img class="rounded-circle" src='/images/avatar.jpg' />
+            <h5 class="author-name">David Fernández</h5>
+            <p>December 1, 2025</p>
+        </div>
+
+        <div class="title">
+            <h1>.NET Concurrency Essentials II</h1>
+        </div>
+
+        <div class="post-content" id="post-content">
+            <p>Let&rsquo;s continue with the .Net asynchronous programming series.</p>
+<p>In the previous post we compared <code>Task</code> and <code>Thread</code> while explaining how the <code>Threadpool</code> and the <code>TaskScheduler</code> relate to tasks. Today I would like to expand more on two concepts so many others may have started with: <code>async</code> and <code>await</code>. What are they meant for? Are we achieving what we really want to achieve with them?</p>
+<p>I usually see people thinking that awaiting a task leads to parallel processing. For me, that is one of the biggest misconceptions about asynchrony.</p>
+<hr>
+<h4 id="what-are-asyncawait-for">What are <code>async/await</code> for?</h4>
+<p>We all use <code>async</code> and <code>await</code>. Every day. They are commonly known to be used the next way:</p>
+<ul>
+<li>I have a method I want to run asynchronously &gt; I add the <code>async</code> modifier to the method declaration. Normally, the method will then return a <code>Task</code> or a <code>Task&lt;T&gt;</code>.</li>
+<li>I want to call that asynchronous method &gt; I call it adding the <code>await</code> keyword.</li>
+</ul>
+<p>And that&rsquo;s it. Magic happens. You would be surprised how many developers stop their curiosity right there. It just works and they don&rsquo;t need to know why, but that is a dangerous way to get to the point where you think your code does something it actually doesn&rsquo;t. Here are some insights about this:</p>
+<ul>
+<li>Thinking that using <code>await</code> creates a new thread is a mistake. As mentioned on the previous post, <code>await</code> will tell the <code>TaskScheduler</code> to queue the task on the <code>ThreadPool</code>, which will then execute it in one of its available threads.</li>
+<li>When we add the <code>async</code> modifier to a method, it will tell the compiler to create a state machine during compilation. That will allow the code execution to suspend and resume on different points of the method without blocking the thread that awaited the method.</li>
+<li>The <code>await</code> keyword is what indicates a suspension point within an asynchronous method. Each <code>await</code> generates a return point in the state machine:
+<ul>
+<li>When the code is awaiting a task that hasn&rsquo;t finished, control is returned to the caller.</li>
+<li>When the task finishes, the method continues from that point.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>In other words. The state machine the <code>async</code> modifier tells the compiler to create is a mechanism that allows the asynchronous method to remember what line was being executed when an <code>await</code> keyword is hit, save the value of the local variables among other things, pause the execution until the task being awaited is done and then resume the execution with that information it saved before.</p>
+</blockquote>
+<h4 id="what-is-the-difference-between-concurrency-and-parallelism">What is the difference between concurrency and parallelism?</h4>
+<p>Since the state machine is pausing the execution of a method until an awaited task is done, returning the control to its caller, you may find yourself thinking that while the task is being executed, the caller is doing other stuff in parallel. This is the trickiest part where I think most developers get wrong. Here is where defining the difference between <em><strong>concurrency</strong></em> and <em><strong>parallelism</strong></em> takes its place:</p>
+<img src="/images/posts/concurrency_parallelism.png"
+    
+    
+    
+    
+    
+>
+
+<p>Imagine Santa&rsquo;s helpers packing Christmas presents. Picture one helper who has to do all the tasks (boxing, wrapping, and adding the ribbon) but can’t finish them in one straight shot because the materials arrive irregularly. He will keep switching between tasks:</p>
+<ul>
+<li>He starts boxing a toy.</li>
+<li>While waiting for more boxes, he switches to wrapping a half-finished gift.</li>
+<li>When the wrapping paper runs out, he jumps back to boxing.</li>
+</ul>
+<p>Only one set of hands is doing the work, but progress is made on several gifts because each helper keeps alternating between them. Nothing happens at the same moment, but multiple tasks are in flight. That’s <em><strong>concurrency</strong></em>: juggling progress on several tasks without doing them simultaneously.</p>
+<p>Now picture three helpers standing next to each other, each doing their specific step continuously:</p>
+<ul>
+<li>One boxes toys nonstop.</li>
+<li>One wraps gifts nonstop.</li>
+<li>One adds ribbons nonstop.</li>
+</ul>
+<p>All three are working at the same time, and multiple gifts advance through the pipeline simultaneously. That’s <em><strong>parallelism</strong></em>: different workers actually working at the same time.</p>
+<blockquote>
+<p><em>Okay David, I think I understand now. Each Santa&rsquo;s helper represents a thread, right? So when my code uses more than one thread then I am using parallelism.</em></p>
+</blockquote>
+<p>Not exactly. A helper can represent a thread, but using more than one thread doesn’t automatically mean you’re running things in parallel. Multiple threads might still be taking turns on a single worker (CPU core), which puts you back in the “one helper switching tasks” situation. That’s  <em><strong>concurrency</strong></em>, not <em><strong>parallelism</strong></em>.</p>
+<p>Remember this line from the previous post &ldquo;<em>A CPU can only execute in parallel as many threads as cores it has</em>&rdquo;.</p>
+<blockquote>
+<p>&ldquo;<em>Noted. So parallelism or concurrency will happen automatically depending on the CPU executing my code. The ThreadPool will see that my CPU has two cores, then use two threads in parallel</em>&rdquo;</p>
+</blockquote>
+<p>Not quite. Concurrency is almost guaranteed if you use multiple threads. <code>async/await</code> doesn’t run things in parallel. It just makes your code non-blocking. To actually leverage multiple CPU cores, you have to offload CPU-bound work to a <code>ThreadPool</code> thread using <code>Task.Run()</code> in combination with <code>Task.WhenAll()</code> or the <code>Parallel</code> class.</p>
+<hr>
+<p>The topic of this post is the one that made me want to go deeper on how asynchrony works. As said, I think most developers get wrong how parallelism and concurrency get achieved.</p>
+<p>I still have enough topics to cover in at least three more posts. In the next one we will talk about the <code>SynchronizationContext</code>, another important topic when awaiting tasks specially on UI applications. Please don&rsquo;t hesitate to comment anything in the comment section if you want to debate or clarify something.</p>
+<p>See you all in the next post!</p>
+
+        </div>
+
+        
+        <hr />
+        <div class="row next-prev-navigator">
+                                        
+            <div class="col-md-12 next-article">
+                <a href="/posts/async1/" class="btn btn-outline-info">
+                    <span>Next <i class="fas fa-chevron-circle-right"></i></span>
+                    <br />
+                    <span>.NET Concurrency Essentials I</span>
+                </a>
+            </div>
+              
+        </div>
+        <hr />
+        
+         <div id="disqus_thread"></div>
+<script>
+    
+    
+    
+
+    
+
+    
+    
+    
+    
+
+    (function() { 
+        var d = document,
+            s = d.createElement('script');
+        d.type = "text/javascript";
+        d.async = true;
+        s.src = 'https://thesyndromeimposter.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+    </div>
+    
+    </div>
+
+    <footer class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+        <div class="row text-left">
+            <div class="col-md-4 col-sm-12">
+                <h5>Navigation</h5>
+                
+                <ul>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#home">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#about">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#skills">Skills</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#experiences">Experiences</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#projects">Projects</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="smooth-scroll" href="#recent-posts">Recent Posts</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h5>Contact Me</h5>
+                <ul>
+                    
+                    <li><span>Email: </span> <span>impostersyndrome.blog@gmail.com</span></li>
+                    
+                </ul>
+            </div>
+        </div>
+        </form>
+    </div>
+    <hr />
+    <div class="d-flex justify-content-center icons">
+        <a class="py-2 px-2 d-none d-lg-inline-block" href="https://dfernandezramos.github.io/index.xml">RSS feed <i class="fas fa-rss fa-blue"></i></a>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row text-left">
+            <div class="col-md-4">
+                <a id="theme" href="https://github.com/hossainemruz/toha" target="#">
+                    <img src="/assets/images/logo-inverted.png"> Toha
+                </a>
+            </div>
+            <div class="col-md-4">© 2020 Copyright.</div>
+            <div class="col-md-4">
+                Powered by <a href="https://gohugo.io/">Hugo
+        <img
+          src="/assets/images/hugo-logo-wide.svg"
+          alt="Hugo Logo"
+          height="18"
+        />
+        </a>
+                <div>Icons made by <a href="https://www.flaticon.com/authors/icongeek26" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="/assets/js/jquery-3.7.1.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script src="/assets/js/navbar.js"></script>
+<script src="/assets/js/jquery.filterizr.min.js"></script>
+
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script src="/assets/js/single.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+     
+</body>
+
+</html>
