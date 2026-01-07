@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <title>.NET Concurrency Essentials III</title>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@
         
          <nav class="navbar navbar-expand-lg top-navbar final-navbar shadow">
     <div class="container">
-        <a class="navbar-brand" href="http://localhost:1313/">
+        <a class="navbar-brand" href="https://www.theimpostersyndrome.dev/">
             <img src="/assets/images/logo.svg">The imposter syndrome</a>
         <button class="navbar-toggler navbar-light" type="button" >
         <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
         <div class="author-profile ml-auto align-self-lg-center">
             <img class="rounded-circle" src='/images/avatar.jpg' />
             <h5 class="author-name">David Fernández</h5>
-            <p>December 2, 2025</p>
+            <p>January 1, 2026</p>
         </div>
 
         <div class="title">
@@ -70,7 +70,7 @@
 <p>Each thread has an associated <code>SynchronizationContext</code>, which is a mechanism that handles <strong>where</strong> and <strong>how</strong> the code is executed. It often redirects the execution of code to a specific thread after an <code>await</code>. Normally, it is used in situations where we need to return the code execution to the UI thread since that is the only one where we can update UI elements. It ensures that async continuations that touch UI controls run on the UI thread.</p>
 <p>We can avoid returning the execution to the previous thread before the <code>await</code> asking the <code>Task</code> to not capture the context with its <code>ConfigureAwait(false)</code> method. This usually improves performance because the execution will continue in another ThreadPool thread instead of waiting for the previous one to be free. As mentioned, it is important to remember that if the code performs UI operations in a different thread other than the UI one the application may throw an exception and crash.</p>
 <p>Since  ASP.Net Core doesn&rsquo;t have UI, the <code>SynchronizationContext</code> is always null by default so continuations after an <code>await</code> will continue on any ThreadPool thread. This is intentional to avoid blocking threads unnecessarily. Classic ASP.Net did have a <code>SynchronizationContext</code>, although, in order to preserve request context. Today, we rely on IHttpContextAccessor to handle the HTTP context differently.</p>
-<p>Each UI framework like Avalonia, WPF, WinForms, etc. have their own implementation. <a href="https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Threading/AvaloniaSynchronizationContext.cs">Here you can check the implementation of the AvaloniaSynchronizationContext</a>.</p>
+<p>Each UI framework like Avalonia, WPF, WinForms, etc. have their own implementation. <a href="https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Threading/AvaloniaSynchronizationContext.cs">Here you can check the implementation of the Avalonia SynchronizationContext</a>.</p>
 <p>Some key points on the <code>SynchronizationContext</code>:</p>
 <ul>
 <li><strong>UI frameworks</strong> use a <em>single-threaded</em> model where all UI operations must run on the UI thread. Their custom SynchronizationContext returns the code execution back to that thread so code that touches UI elements behaves safely.</li>

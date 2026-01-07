@@ -6,8 +6,15 @@
     <description>Recent content in Asynchrony on The imposter syndrome</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.theimpostersyndrome.dev/categories/asynchrony/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>.NET Concurrency Essentials III</title>
+      <link>https://www.theimpostersyndrome.dev/posts/async3/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.theimpostersyndrome.dev/posts/async3/</guid>
+      <description>&lt;p&gt;I wish you all a merry Christmas and a happy new year 2026. May your life goals be achieved this year! Here is my little present for you: the third post about concurrency on .Net!&lt;/p&gt;&#xA;&lt;p&gt;In the previous post we compared &lt;code&gt;Concurrency&lt;/code&gt; and &lt;code&gt;Parallelism&lt;/code&gt; and also explained how &lt;code&gt;async&lt;/code&gt; and &lt;code&gt;await&lt;/code&gt; really work under the hood. Today we are going with a shorter (but not least important) one: &lt;code&gt;SynchronizationContext&lt;/code&gt;. What is it and why is it important in UI applications? Does it make my application faster?&lt;/p&gt;</description>
+    </item>
     <item>
       <title>.NET Concurrency Essentials II</title>
       <link>https://www.theimpostersyndrome.dev/posts/async2/</link>
